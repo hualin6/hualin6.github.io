@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="web技术">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    HTML之DOM操作 |
+    
+    一叶知秋</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-HTML之DOM操作" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML之DOM操作
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/27/HTML%E4%B9%8BDOM%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2020-06-27T13:29:47.127Z" itemprop="datePublished">2020-06-27</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML之DOM操作</title>
+		<style type="text/css">
+			body{
+				margin-left: 100px;
+				background-color: bisque;
+			}
+		</style>
+		<script type="text/javascript">
+			function show(){
+				var inp=document.getElementById("int1");
+				var obj=document.getElementById("d1");
+				obj.innerHTML=inp.value;
+			}
+		</script>
+	<meta name="generator" content="Hexo 4.2.1"></head>
+	<body>
+		<div>
+			<br>
+			<h2>HTML之DOM操作</h2>
+			<h3>本例使用简单的输入框和按钮实现将用户输入的内容显示出来</h3>
+			<br>
+			<p>1.创建输入框/按钮/显示区域</p>
+			<p>创建输入框 : </p>
+			<p>< input type="text" id="int1" value="" /> </p>
+			<p>创建按钮 : </p>
+			<p>< button onclick="show()">显示< /button> </p>
+			<p>创建显示区域 : </p>
+			< div id="d1">这里是显示区域< /div>
+			<br>
+			<br>
+			<p>2.给输入框和显示区域设定id，给按钮设置一个点击事件，点击时调用一个函数</p>
+			<br><br>
+			<p>3.写函数</p>
+			<div>
+				<p>function show(){</p>
+				<p>//声明变量获取输入元素对象</p>
+				<p>var inp=document.getElementById("int1");</p>
+				<p>//声明变量获取显示区域元素对象</p>
+				<p>var obj=document.getElementById("d1");</p>
+				<p>//使用对象.innerHTML来操作显示区域，将输入对象的的值赋给显示区域对象</p>
+				<p>obj.innerHTML=inp.value;</p>
+				<p>}</p>
+				<br><br>
+				<p>4.函数需在head中并在 <b>< script>函数放这里< /script> </b>中</p>
+				<br><br>
+				<p>简单的说就是设置一个点击按钮事件,调用函数方法,函数中写好dom操作对象,并用对象点出属性</p>
+				<br><br>
+			</div>
+			<p style="color: red;">----------------------------------示例----------------------------------</p>
+			<br>
+			请输入内容 : <input type="text" id="int1" value="" />
+			<button onclick="show()">显示</button>
+			<br><br>
+			<hr>
+			<p style="color: #0000FF;">显示输入的内容 :</p>
+			<div style="color: red;height: 300px;" id="d1"></div>
+		</div>
+	</body>
+</html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/27/HTML%E4%B9%8BDOM%E6%93%8D%E4%BD%9C/" data-id="ckbxootjl0003zgteglgeequ0"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/06/27/hello-world/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Hello World</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>
