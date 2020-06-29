@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="web技术">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    HTML之AJAX简介 |
+    
+    一叶知秋</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-HTML之AJAX简介" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML之AJAX简介
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/29/HTML%E4%B9%8BAJAX%E7%AE%80%E4%BB%8B/" class="article-date">
+  <time datetime="2020-06-29T13:57:35.605Z" itemprop="datePublished">2020-06-29</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML之AJAX</title>
+		<style type="text/css">
+			li{
+				margin-bottom: 12px;
+			}
+			#d1{
+				width: 768px;
+				margin: 0 auto;
+			}
+			body{
+				background-color: #FAEBD7
+			}
+			div{
+				/* border: 1px dashed #6610F2; */
+			}
+		</style>
+	<meta name="generator" content="Hexo 4.2.1"></head>
+	<body>
+		<div id="d1">
+			<h1>HTML之AJAX</h1>
+			<br>
+			<ul>
+				<li><h3 style="color: red;">AJAX 简介</h3></li>
+			</ul>
+			<ol>
+				<li>AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</li>
+				<li>AJAX = 异步的 JavaScript 和 XML</li>
+				<li>通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</li>
+				<li style="color: #666;">同步 : 浏览器在向服务器发送请求的时候，不能做其它任何操作，只能等待服务器响应</li>
+			</ol>
+			<ul>
+				<br><hr><br>
+				<li><h3 style="color: red;">AJAX 原理</h3></li>
+				<li style="list-style: none;color: #0000FF;"><h4>使用JavaScript提供的异步对象 XMLHttpRequest，用于在后台与服务器交换数据，发送请求和接收响应</h4></li>
+			</ul>
+			<ol>
+				<h4>使用步骤(小黄人四部曲):</h4>
+				<li>创建异步对象</li>
+				<p style="color: red;">var xhr=new XMLHttpRequest();</p>
+				<li>通过异步对象，创建请求</li>
+				<p>xhr.open("请求类型"，"接口的url"，是否使用异步的方式);</p>
+				<p style="color: red;">xhr.open("get"，"http://127.0.0.1:8080/ajax/test"，true);</p>
+				<li>发送请求</li>
+				<p>创建请求主体formdata</p>
+				<p>post和put使用请求主体传参数</p>
+				<p style="color: red;">var formdata=`uname=${$uname}&upwd=${$upwd}`</p>
+				<p>默认情况下，允许提交普通字符，如果有特殊字符&=的需要修改请求头信息，改成允许提交所有字符</p>
+				<p>xhr.setRequestHeader("Content-Type"，"application/x-www-form-urlencoded");</p>
+				<p>xhr.setRequestHeader("内容类型/头名称"，"提交所有字符的form表单/头的值");</p>
+				<p style="color: red;">xhr.send(formdata);不带请求括号内可以不用写，带请求主体的写上</p>
+				<li>接收响应</li>
+				<p style="color: red;">xhr.onreadystatechange=function(){}</p>
+				<p>这里监听的是xhr.readyState的值的改变（改变4次），请求状态</p>
+				<p>xhr.readyState描述了xhr的请求状态 :</p>
+				<p>0 请求没有初始化</p>
+				<p>1 打开连接，请求正在发送</p>
+				<p>2 开始接收响应头</p>
+				<p>3 开始接收响应主体</p>
+				<p>4 响应数据接收完毕</p>
+				<p>一般我们只关注接收响应，也就是最后一个，可以通过if语句来筛选第4遍</p>
+				<p style="color: red;">xhr.onreadystatechange=function(){</p>
+				<p>关注第四遍的xhr.readyState请求状态，响应码为200的正确状态，如返回的是404状态，说明未找到页面</p>
+				<p style="color: red;"> if(xhr.readyState==4 && xhr.status==200){</p>
+				<p>响应数据默认保存在xhr.responseText</p>
+				<p style="color: red;">var r=xhr.responseText;</p>
+				<p>此时接收到后台响应数据保存到r变量中，至此四部曲完成</p>
+				<p><h4 style="color: blue;">在学习或调试时按1423的步骤来写</h4></p>
+				<h4>请求类型/方法</h4>
+				<table style="border:1px solid #0000FF;">
+					<tr>
+						<td style="border:1px solid #0000FF;text-align: center;background-color: #FFCC33;">http原生的请求方法</td>
+						<td style="border:1px solid #0000FF;text-align: center;background-color: #FFFF66;">Restful API接口</td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #0000FF;">get 明文传参，上限2kb，查询字符串传参向服务器要数据的时候用</td>
+						<td style="border:1px solid #0000FF;">get 做查询模块的时候使用，没有请求主体&nbsp; &nbsp;---select</td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #0000FF;">post 隐式传参，给服务器传递数据的时候用请求主体传递参数</td>
+						<td style="border:1px solid #0000FF;">post 做新增模块的时候使用，有请求主体 &nbsp;&nbsp; ---insert</td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #0000FF;">post 隐式传参，给服务器传递数据的时候用请求主体传递参数</td>
+						<td style="border:1px solid #0000FF;">post 做新增模块的时候使用，有请求主体 &nbsp;&nbsp;&nbsp;---insert</td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #0000FF;">put 往服务器上放资源的时候用</td>
+						<td style="border:1px solid #0000FF;">put 做修改模块使用，有请求主体---update</td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #0000FF;">delete 从服务器删除资源的时候用</td>
+						<td style="border:1px solid #0000FF;">delete 做删除模块时候，没有请求主体 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---delete</td>
+					</tr>
+				</table>
+			</ol>
+			<br><hr><br>
+			<ul>
+				<li><h3 style="color: red;">案例---登录验证</h3></li>
+				<h4 style="color: blue;">前台</h4>
+				<p>function login(){</p>
+					<p>var $uname=uname.value;</p>
+					<p>var $upwd=upwd.value;</p>
+					<p>非空验证</p>
+					<p>if(!$unamr){alert('用户名不能为空');return;};</p>
+					<p>if(!$upwd){alert('密码不能为空');return;};</p>
+					<p>1.创建xhr异步对象</p>
+					<p>var xhr=new XMLHttpRequest();</p>
+					<p>4.接收响应，创建监听</p>
+					<p>xhr.onreadystatechange=function(){</p>
+						<p style="margin-left: 20px;">if(xhr.readyState==4 && xhr.status==200){</p>
+							<p style="margin-left: 25px;">var r=xhr.responseText;</p>
+							<p style="margin-left: 25px;">if(r==1){</p>
+							<p style="margin-left: 25px;">d1.innerHTML='登录成功';</p>
+							<p style="margin-left: 25px;">}else{</p>
+							<p style="margin-left: 25px;">d1.innerHTML='登录失败'</p>
+							<p style="margin-left: 25px;">}</p>
+						<p style="margin-left: 20px;">}</p>
+					<p>}</p>
+					<p>2.打开连接，创建请求</p>
+					<p>xhr.open('GET',`/pro/v1/pro_login/${$uname}&${$upwd}`,true);</p>
+					<p>3.发送请求</p>
+					<p>xhr.send();</p>
+				<p>}</p>
+				<br><br>
+				<h4 style="color: blue;">后台</h4>
+				<p>用户登录的路由,使用get请求方法</p>
+				<p>router.get('/v1/pro_login/:uname&:upwd',(req,res)=>{</p>
+				<p>由于使用是restful,所以使用params方法获取前台的数据</p>
+				    <p style="margin-left: 20px;">var $uname=req.params.uname;</p>
+				    <p style="margin-left: 20px;">var $upwd=req.params.upwd;</p>
+						<p style="margin-left: 20px;">数据库查询</p>
+				    <p style="margin-left: 20px;">var sql='select * from xz_user where uname=? and upwd=?';</p>
+				    <p style="margin-left: 20px;">pool.query(sql,[$uname,$upwd],(err,result)=>{</p>
+				       <p style="margin-left: 30px;"> if (err) throw err;</p>
+				        <p style="margin-left: 30px;">if (result.length>0){</p>
+										<p style="margin-left: 40px;">将查询的数据状态返回前台,这里使用1和0</p>
+				            <p style="margin-left: 40px;">res.send("1");</p>
+				        <p style="margin-left: 30px;">}else {</p>
+				            <p style="margin-left: 40px;">res.send("0");</p>
+				        <p style="margin-left: 30px;">}</p>
+				   <p style="margin-left: 20px;"> })</p>
+				<p>})</p>
+			</ul>
+			<br><hr>
+			<h4 style="color: blue;">以上内容为AJAX的简单介绍及应用,正常做项目中AJAX已有其他封装好的,直接调用即可</h4>
+			<br>
+			<p style="text-align: right;">MarkLin</p>
+			<p style="text-align: right;">2020-06-30</p>
+		</div>
+	</body>
+</html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/29/HTML%E4%B9%8BAJAX%E7%AE%80%E4%BB%8B/" data-id="ckc0r055s000018te2saz3sw7"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/06/27/HTML%E4%B9%8BDOM%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">HTML之DOM操作</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>
