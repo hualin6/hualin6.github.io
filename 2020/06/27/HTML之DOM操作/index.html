@@ -81,14 +81,15 @@
 				var inp=document.getElementById("int1");
 				var obj=document.getElementById("d1");
 				obj.innerHTML=inp.value;
+				inp.value=''
 			}
 		</script>
 	<meta name="generator" content="Hexo 4.2.1"></head>
 	<body>
-		<div>
+<div>
 			<br>
 			<h2>HTML之DOM操作</h2>
-			<h3>本例使用简单的输入框和按钮实现将用户输入的内容显示出来</h3>
+			<h3>本例使用简单的输入框和按钮实现一些功能</h3>
 			<br>
 			<p>1.创建输入框/按钮/显示区域</p>
 			<p>创建输入框 : </p>
@@ -112,23 +113,63 @@
 				<p>obj.innerHTML=inp.value;</p>
 				<p>}</p>
 				<br><br>
-				<p>4.函数需在head中并在 <b>< script>函数放这里< /script> </b>中</p>
+				<p>4.函数需在<b>< script>函数放这里< /script> </b>中</p>
 				<br><br>
 				<p>简单的说就是设置一个点击按钮事件,调用函数方法,函数中写好dom操作对象,并用对象点出属性</p>
 				<br><br>
 			</div>
 			<p style="color: red;">----------------------------------示例----------------------------------</p>
-			<br>
-			请输入内容 : <input type="text" id="int1" value="" />
-			<button onclick="show()">显示</button>
+			
+			<h4 style="color: #0000FF;">结果将在显示区域展示</h4>
+			<p>1. 请输入任意内容 : </p>
+			<input style="width: 300px;height: 30px;" type="text" id="int1"/>
+			<button style="width: 80px;height: 36px;" onclick="show()">显 示</button>
 			<br><br>
 			<hr>
-			<p style="color: #0000FF;">显示输入的内容 :</p>
-			<div style="color: red;height: 300px;" id="d1"></div>
+			<p>2. 判断某年是否为闰年</p>
+			<p>请输入一个年份(如2020) :</p>
+			<input style="width: 300px;height: 30px;" type="text" id="int2"/>
+			<button style="width: 80px;height: 36px;" onclick="show1()">显 示</button>
+			<script type="text/javascript">
+				function show1(){
+					var year=Number(int2.value)
+					if(year%4==0 && year%100!==0 || year%400==0){
+						d1.innerHTML=`${year}年是闰年`;
+					}else{
+						d1.innerHTML=`${year}年不是闰年`;
+					}
+				}
+			</script>
+			<br><br>
+			<hr>
+			<p>3. 输入身高体重计算BMI</p>
+			身高 : <input style="width: 60px;height: 30px;text-align: center;" type="text" id="int4"/> <span style="margin-right: 30px;">cm</span>
+			体重 : <input style="width: 60px;height: 30px;text-align: center;" type="text" id="int3"/> <span style="margin-right: 30px;">kg</span>
+			<button style="width: 80px;height: 36px;" onclick="show3()">计算BMI</button>
+			<p>体质指数（BMI）=体重（kg）÷身高（m）的平方</p>
+			<p>BMI< 18.5 偏轻, 18.5<=BMI<24 正常, BMI >=24 偏重</p>
+			<script type="text/javascript">
+				function show3(){
+					var w=Number(int3.value);
+					var h=Number(int4.value)/100;
+					var bmi=(w/(h*h));
+					bmi=bmi.toFixed(2);
+					if(bmi>23.9){
+						d1.innerHTML=`BMI值: ${bmi},体重偏重`;
+					}else if(bmi<18.5){
+						d1.innerHTML=`BMI值: ${bmi},体重偏轻`;
+					}else{
+						d1.innerHTML=`BMI值: ${bmi},体重正常`;
+					}
+				}
+			</script>
+			<br>
+			<hr>
+			<p style="color: #0000FF;">结果显示区域 :</p>
+			<div style="color: red;height: 300px;border: 1px solid #0000FF;" id="d1"></div>
 		</div>
 	</body>
 </html>
-
       
     </div>
     <footer class="article-footer">
