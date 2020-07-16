@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="web技术">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    MySQL语法 |
+    
+    一叶知秋</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/technology.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <section class="outer">
+  <article id="post-MySQL语法" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL语法
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/07/16/MySQL%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time datetime="2020-07-16T15:56:04.098Z" itemprop="datePublished">2020-07-16</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MySQL语法</title>
+    <style>
+body{margin: 0 auto;background-image: linear-gradient(to right,rgba(240, 255, 155, 0.151), rgba(233, 255, 180, 0.541), rgba(255, 180, 180, 0.959));}p{font: 14px '宋体';}.center{margin: 0 auto;width: 1000px;min-width: 1000px;}table,table>tbody>tr>td{border-bottom: 1px solid #999999;line-height: 30px;position: relative;/* margin: 0 auto;*/}table>thead>tr>th{border-bottom: 3px solid #888888;}table>tbody>tr>td:first-child{width: 300px;text-align: center;border-right: 1px solid #999999;padding-left: 20px;text-align: start;color: rgb(83, 83, 83);}table>tbody>tr>td:last-child{width: 700px;padding-left:10px ;font-size: 16px;color: rgb(83, 83, 83);}.top{margin: 50px auto;}.font_h{color: red;font-size: 18px;}xmp{font-size: 16px;font-family: '微软雅黑';line-height: 40px;margin: 0 0;}
+    </style>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+	<h1 style="color: #0E0EFF;text-align: center;">MySQL入门</h1>
+	<div class="center">
+		<br><br><h4 style="text-align: center;">以下资料个人学习整理,仅供参考</h4><hr><br><br>
+	<table cellpadding="0" cellspacing="0">
+    <thead>
+			<tr>
+					<th>单词/命令</th>
+					<th>用法/语义</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tbody>
+			<tr>
+					<td>-h:</td>
+					<td>服务器IP地址/域名</td>
+			</tr>
+			<tr>
+					<td>-P:</td>
+					<td>连接服务器的端口</td>
+			</tr>
+			<tr>
+					<td>-u:</td>
+					<td>用户名</td>
+			</tr>
+			<tr>
+					<td>-p:</td>
+					<td>用户密码</td>
+			</tr>
+			<tr>
+					<td>quit</td>
+					<td>退出服务器的连接</td>
+			</tr>
+			<tr>
+					<td>show databases</td>
+					<td>显示服务器上当前所有的数据库</td>
+			</tr>
+			<tr>
+					<td>use 数据库名称</td>
+					<td>进入指定的数据库</td>
+			</tr>
+			<tr>
+				<td>show tables</td>
+				<td>显示当前数据库中所有的数据表</td>
+			</tr>
+			<tr>
+				<td>desc 数据表名称</td>
+				<td>描述表中都有哪些列（表头）</td>
+			</tr>
+			<tr>
+				<td>set names UTF8</td>
+				<td>设置客户端连接服务端编码格式</td>
+			</tr>
+			<tr>
+				<td>drop database if exists 数据库名称</td>
+				<td>丢弃数据库 如果存在</td>
+			</tr>
+			<tr>
+				<td>create database 数据库名 charset=UTF8</td>
+				<td>创建新的数据库并设置存储编码格式</td>
+			</tr>
+			<tr>
+				<td>create table 表名称()</td>
+				<td>创建保存数据的表(包含表头及数据类型)</td>
+			</tr>
+			<tr>
+				<td>insert into 表 values()</td>
+				<td>向数据表中插入数据</td>
+			</tr>
+			<tr>
+				<td>update 表 set 值 where 条件</td>
+				<td>修改表中的值</td>
+			</tr>
+			<tr>
+				<td>delete from 表 where 条件</td>
+				<td>删除表中的行</td>
+			</tr>
+			<tr>
+				<td>PRIMARY KEY</td>
+				<td>主键约束(声明了主键约束的列上不允许插入NULL)</td>
+			</tr>
+			<tr>
+				<td>unique</td>
+				<td>唯一约束</td>
+			</tr>
+			<tr>
+				<td>not null</td>
+				<td>非空约束</td>
+			</tr>
+			<tr>
+				<td>default</td>
+				<td>默认值约束</td>
+			</tr>
+			<tr>
+				<td>check</td>
+				<td>检查约束</td>
+			</tr>
+			<tr>
+				<td>auto_incremnet</td>
+				<td>自增</td>
+			</tr>
+			<tr>
+				<td>foreign key(外键列) references 另一个表(主键列)</td>
+				<td>外键约束</td>
+			</tr>
+			<tr>
+				<td>select 字段1,字段2,...</td>
+				<td>选择查找字段</td>
+			</tr>
+			<tr>
+				<td>from 表名</td>
+				<td>来自某数据表</td>
+			</tr>
+			<tr>
+				<td>where 条件</td>
+				<td>查找条件</td>
+			</tr>
+			<tr>
+				<td>group by 分组条件</td>
+				<td>根据一个或多个列对结果集进行分组</td>
+			</tr>
+			<tr>
+				<td>having 筛选条件</td>
+				<td>根据条件筛选</td>
+			</tr>
+			<tr>
+				<td>order by 排序条件 顺序</td>
+				<td>将查询结果按指定条件升/降排序</td>
+			</tr>
+			<tr>
+				<td>limit 起始编号,数量</td>
+				<td>限制查询的记录数(每页显示几条记录)</td>
+			</tr>
+			<tr>
+				<td>max()</td>
+				<td>求最大值</td>
+			</tr>
+			<tr>
+				<td>min()</td>
+				<td>求最小值</td>
+			</tr>
+			<tr>
+				<td>avg()</td>
+				<td>求平均值</td>
+			</tr>
+			<tr>
+				<td>sum()</td>
+				<td>求和</td>
+			</tr>
+			<tr>
+				<td>count()</td>
+				<td>求总个数</td>
+			</tr>
+			<tr>
+				<td>between and</td>
+				<td>在...之间</td>
+			</tr>
+			<tr>
+				<td>in</td>
+				<td>在...之中</td>
+			</tr>
+			<tr>
+				<td>like 模糊查询(%,_)</td>
+				<td>%:通配任意个字符, _ 通配任意一个字符</td>
+			</tr>
+			<tr>
+				<td>distinct</td>
+				<td>将查询结果去重</td>
+			</tr>
+			<tr>
+				<td>inner join</td>
+				<td>内连接</td>
+			</tr>
+			<tr>
+				<td>left outer join / left join</td>
+				<td>左外连接</td>
+			</tr>
+			<tr>
+				<td>right outer join / right join</td>
+				<td>右外连接</td>
+			</tr>
+			<tr>
+				<td>Union(左外和右外的结果组合)</td>
+				<td>合并相同的记录</td>
+			</tr>
+			<tr>
+				<td>Union all(左外和右外的结果组合)</td>
+				<td>不合并相同的记录</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2"style="border-right:0;background-color:#a9a9a9;color:blue;"><b> 数 据 类 型 </b></td>
+				<!-- <td></td> -->
+			</tr>
+			<tr>
+				<td>tinyint</td>
+				<td>微整型，占1个字节，范围-128~127  <a href="javascript:;">(数值型引号可加可不加)</a></td>
+			</tr>
+			<tr>
+				<td>smallint</td>
+				<td>小整型，占2个字节，范围-32768~32767</td>
+			</tr>
+			<tr>
+				<td>int</td>
+				<td> 整型，占4个字节，范围-2147483648~2147483647</td>
+			</tr>
+			<tr>
+				<td>bigint</td>
+				<td>大整型，占8个字节</td>
+			</tr>
+			<tr>
+				<td>float</td>
+				<td>单精度浮点型，占4个字节，最大是3.4e38，可能产生计算误差</td>
+			</tr>
+			<tr>
+				<td>double</td>
+				<td>双精度浮点型，占8个字节，范围比bigint大的多，可能产生计算误差</td>
+			</tr>
+			<tr>
+				<td>decimal(M,D)</td>
+				<td>定点小数，几乎不会产生误差，M代表总的有效位数，D代表小数点后的有效位数</td>
+			</tr>
+			<tr>
+				<td>boolean/bool</td>
+				<td>布尔型，只有两个值，分别是true（真1）和false（假0），这两个值不能加引号</td>
+			</tr>
+			<tr>
+				<td>date</td>
+				<td>日期型    2020-01-25 <a href="javascript:;">(所有日期时间型必须加引号)</a></td>
+			</tr>
+			<tr>
+				<td>time</td>
+				<td>时间型   10:20:30</td>
+			</tr>
+			<tr>
+				<td>datetime</td>
+				<td>日期时间型   2020-01-25  10:20:30</td>
+			</tr>
+			<tr>
+				<td>varchar(M)</td>
+				<td>变长字符串，操作速度相对慢，M最大值是65535 <a href="javascript:;">(所有日期时间型必须加引号)</a></td>
+			</tr>
+			<tr>
+				<td>char(M)</td>
+				<td>定长字符串，操作速度相对快，M最大值是255，往往存储长度固定的数据，例如身份证号码，手机号码可以使用；可能产生空间浪费</td>
+			</tr>
+			<tr>
+				<td>text(M)</td>
+				<td>大型变长字符串，M最大值是2G</td>
+			</tr>
+		</tbody>
+</table>
+<div class="top">
+	
+	<h3>如何用客户端连接服务器端</h3>
+	<h4 class="font_h">完整写法:  &nbsp;mysql -h127.0.0.1 -P3306 -uroot -p</h4>
+
+	<h4 class="font_h">简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写: &nbsp;mysql -uroot</h4>
+</div>
+<br><br><h3 style="color: blue;">查询示例</h3><hr><br><br>
+<div style="text-align: left;">
+	多条件查询:
+	<xmp>
+		select id,name,salary from emp where id > 7 and salary > 10000; #条件是id大于7和工资大于10000
+		select name,title,salary from emp where salary between 10000 and 20000; #条件是工资10000-20000之间的
+		select id,name,salary from emp where salary in(7700,9000,11000); #条件是工资在7700,9000,11000的人员
+	</xmp>
+模糊查询:
+	<xmp>
+		select * from emp where name like '%a%';   #名字中带有a的人员
+		select * from emp where name like 'a%';   #名字是a开头的人员
+		select * from emp where name like '%a';   #名字是a结尾的人员
+		select * from emp where name like '%a_';  #名字中倒数第二个是a的人员
+		select * from emp where name like '_a%';  #名字中第二个是a的人员
+	</xmp>
+	分组查询:	
+	<xmp>
+		select title,avg(salary) from emp group by title;  #平均工资,按职位排序
+		select mid,count(id),avg(salary),group_concat(name) as name
+		from emp
+		where mid = 3 or mid = 1 or mid = 8
+		group by mid having avg(salary)
+		order by count(id) desc;     #按职位排序,统计每个职位的人数和所有名字
+		select *from emp order by id; #将结果按工号升序排序  
+		select *from emp order by id desc; #将结果按工号降序排序 
+		select *from emp order by deptid desc,mid asc;  #按多列排序:先按照deptid 降序排序,如果部门相同,再按照mid排序
+	</xmp>
+	limit 限制查询的记录数:
+	<xmp>
+		select *from emp order by salary desc limit 0,5;   #每五个数据一列,第一页
+	</xmp>
+	关键字的执行优先级: from → where → group by → having → select → distinct → order by → limit
+	<xmp>
+		解释:
+		1.找到表:from
+		2.拿着 where 指定的约束条件,去文件/表中取出一条条记录
+		3.将取出的一条条记录进行分组 group by ,如果没有 group by ,则整体作为一组
+		4.将分组的结果进行 having 过滤
+		5.执行 select 
+		6.去重
+		7.将结果按条件排序: order by
+		8.限制结果的显示条数	
+	</xmp>
+<h3 style="color: blue;">创建数据库</h3> 
+	<xmp>
+SET NAMES UTF8;		#设置客户端连接服务端编码
+DROP DATABASE IF EXISTS sjk;	#如果有sjk数据库，先丢弃
+CREATE DATABASE sjk CHARSET=UTF8;		#创建数据库sjk,并设置存储编码
+USE sjk;		#进入数据库
+CREATE TABLE yg(
+id INT PRIMARY KEY,
+name VARCHAR(8),
+age INT
+);	
+#创建表yg,表里包含id,name,age,并设置数据类型
+INSERT INTO yg VALUES(001,'ASD',30);	#插入数据
+INSERT INTO yg VALUES(002,'dfgd',20);
+INSERT INTO yg VALUES(003,'xfgdf',25);
+UPDATE yg SET age=18 where id=002; 	#将id为002的age改成18
+DELETE FROM yg where id=003;		#将id为003的数据删除
+	</xmp>
+	</div>
+	<div style="text-align: end;margin-right: 50px;">MarkLin</div>
+	<div style="text-align: end;">2020年07月16日 星期四</div>
+</div>
+</body>
+</html>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/16/MySQL%E8%AF%AD%E6%B3%95/" data-id="ckcozc5mb0000icte1chlhw79"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/06/29/HTML%E4%B9%8BAJAX%E7%AE%80%E4%BB%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">HTML之AJAX简介</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  
+
+</article>
+
+
+
+</section>
+    </div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/technology.js"></script>
+
+
+  </div>
+</body>
+</html>

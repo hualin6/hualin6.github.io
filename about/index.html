@@ -65,41 +65,7 @@
 <!--添加运行时间-->
 <p>  <span id="sitetime"></span></p>
 <script language=javascript>
-    function siteTime(){
-        window.setTimeout("siteTime()", 1000);
-        var seconds = 1000;
-        var minutes = seconds * 60;
-        var hours = minutes * 60;
-        var days = hours * 24;
-        var years = days * 365;
-        var today = new Date();
-        var todayYear = today.getFullYear();
-        var todayMonth = today.getMonth()+1;
-        var todayDate = today.getDate();
-        var todayHour = today.getHours();
-        var todayMinute = today.getMinutes();
-        var todaySecond = today.getSeconds();
-        /* 
-        Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-        year - 作为date对象的年份，为4位年份值
-        month - 0-11之间的整数，做为date对象的月份
-        day - 1-31之间的整数，做为date对象的天数
-        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-        minutes - 0-59之间的整数，做为date对象的分钟数
-        seconds - 0-59之间的整数，做为date对象的秒数
-        microseconds - 0-999之间的整数，做为date对象的毫秒数
-        */
-        var t1 = Date.UTC(2020,06,27,12,00,00); //北京时间2018-2-13 00:00:00
-        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-        var diff = t2-t1;
-        var diffYears = Math.floor(diff/years);
-        var diffDays = Math.floor((diff/days)-diffYears*365);
-        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
-        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
-        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-        document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
-    }
-    siteTime();
+function siteTime(){window['\x73\x65\x74\x54\x69\x6d\x65\x6f\x75\x74']("\x73\x69\x74\x65\x54\x69\x6d\x65\x28\x29",1000);var aeKBM1=1000;var k2=aeKBM1*60;var ouAs3=k2*60;var sIXEGjdNV4=ouAs3*24;var n5=sIXEGjdNV4*365;var qXg6=new window["\x44\x61\x74\x65"]();var XMj7=qXg6['\x67\x65\x74\x46\x75\x6c\x6c\x59\x65\x61\x72']();var K8=qXg6['\x67\x65\x74\x4d\x6f\x6e\x74\x68']()+1;var R9=qXg6['\x67\x65\x74\x44\x61\x74\x65']();var zdqaSQ10=qXg6['\x67\x65\x74\x48\x6f\x75\x72\x73']();var oJbadLCv11=qXg6['\x67\x65\x74\x4d\x69\x6e\x75\x74\x65\x73']();var oCwJKoLUX12=qXg6['\x67\x65\x74\x53\x65\x63\x6f\x6e\x64\x73']();var OstK$hQW13=window["\x44\x61\x74\x65"]['\x55\x54\x43'](2020,06,27,12,00,00);var GFshNtY14=window["\x44\x61\x74\x65"]['\x55\x54\x43'](XMj7,K8,R9,zdqaSQ10,oJbadLCv11,oCwJKoLUX12);var oRgeRC20=GFshNtY14-OstK$hQW13;var zXRmjnU21=window["\x4d\x61\x74\x68"]['\x66\x6c\x6f\x6f\x72'](oRgeRC20/n5);var AsTPUjiy22=window["\x4d\x61\x74\x68"]['\x66\x6c\x6f\x6f\x72']((oRgeRC20/sIXEGjdNV4)-zXRmjnU21*365);var Kk23=window["\x4d\x61\x74\x68"]['\x66\x6c\x6f\x6f\x72']((oRgeRC20-(zXRmjnU21*365+AsTPUjiy22)*sIXEGjdNV4)/ouAs3);var OwVMJ24=window["\x4d\x61\x74\x68"]['\x66\x6c\x6f\x6f\x72']((oRgeRC20-(zXRmjnU21*365+AsTPUjiy22)*sIXEGjdNV4-Kk23*ouAs3)/k2);var iXd25=window["\x4d\x61\x74\x68"]['\x66\x6c\x6f\x6f\x72']((oRgeRC20-(zXRmjnU21*365+AsTPUjiy22)*sIXEGjdNV4-Kk23*ouAs3-OwVMJ24*k2)/aeKBM1);window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x73\x69\x74\x65\x74\x69\x6d\x65")['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c']=" \u5df2\u8fd0\u884c"+AsTPUjiy22+" \u5929 "+Kk23+" \u5c0f\u65f6 "+OwVMJ24+" \u5206\u949f "+iXd25+" \u79d2"}siteTime();
 </script>
       
     </div>
