@@ -868,7 +868,7 @@ template {
 html,
 body {
   height: 100%;
-  width: 90%;
+  width: 100%;
 }
 html {
   font-size: 62.5%;
@@ -1106,7 +1106,7 @@ img {
   }
   .wrap,
   .outer {
-    width: 70rem;
+    width: 100rem;
     padding-right: 0;
     padding-left: 0;
   }
