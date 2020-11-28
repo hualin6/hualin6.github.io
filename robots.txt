@@ -1,0 +1,7 @@
+# robots.txt file from http://yjjt.top
+
+# All robots will spider the domain
+
+User-agent:*
+
+Disallow:/images
