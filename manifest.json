@@ -1,0 +1,17 @@
+{
+  "name": "MarkLin",
+  "short_name": "一叶知秋",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#2196f3",
+  "description": "一叶知秋的个人主页",
+  "theme_color": "blue",
+  "icons": [
+    {
+      "src": "./ulogo.jpg",
+      "sizes": "144x144",
+      "type": "image/jpg"
+    }
+  ]
+  
+}

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端常见面试题---1 | 一叶知秋</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?db7a76bcaf69e72cf71ae94cfb553780";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <script language="javascript" type="text/javascript" src="/js/medium-zoom.min.js"></script>
+    <meta name="description" content="">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.10f778cf.css" as="style"><link rel="preload" href="/assets/js/app.92ec518b.js" as="script"><link rel="preload" href="/assets/js/3.9492ddf1.js" as="script"><link rel="preload" href="/assets/js/1.1c321afd.js" as="script"><link rel="preload" href="/assets/js/56.1e5c12ee.js" as="script"><link rel="prefetch" href="/assets/js/10.381f9389.js"><link rel="prefetch" href="/assets/js/11.f0ddc120.js"><link rel="prefetch" href="/assets/js/12.9601c76c.js"><link rel="prefetch" href="/assets/js/13.87e595b0.js"><link rel="prefetch" href="/assets/js/14.eac5cd99.js"><link rel="prefetch" href="/assets/js/15.4c93dbdb.js"><link rel="prefetch" href="/assets/js/16.c822b916.js"><link rel="prefetch" href="/assets/js/17.6ecb6f8a.js"><link rel="prefetch" href="/assets/js/18.07570db7.js"><link rel="prefetch" href="/assets/js/19.caea2261.js"><link rel="prefetch" href="/assets/js/20.20d84464.js"><link rel="prefetch" href="/assets/js/21.0a9f420b.js"><link rel="prefetch" href="/assets/js/22.290120eb.js"><link rel="prefetch" href="/assets/js/23.19ad2faf.js"><link rel="prefetch" href="/assets/js/24.e946d41a.js"><link rel="prefetch" href="/assets/js/25.d346f21e.js"><link rel="prefetch" href="/assets/js/26.d0a7b649.js"><link rel="prefetch" href="/assets/js/27.ceb15a01.js"><link rel="prefetch" href="/assets/js/28.2656eb90.js"><link rel="prefetch" href="/assets/js/29.bd24dcef.js"><link rel="prefetch" href="/assets/js/30.283d7c20.js"><link rel="prefetch" href="/assets/js/31.67999da9.js"><link rel="prefetch" href="/assets/js/32.2e46e597.js"><link rel="prefetch" href="/assets/js/33.7402e092.js"><link rel="prefetch" href="/assets/js/34.14bd315e.js"><link rel="prefetch" href="/assets/js/35.04c83e2f.js"><link rel="prefetch" href="/assets/js/36.cd35446b.js"><link rel="prefetch" href="/assets/js/37.f338ffa9.js"><link rel="prefetch" href="/assets/js/38.e4654270.js"><link rel="prefetch" href="/assets/js/39.01a77e0a.js"><link rel="prefetch" href="/assets/js/4.95c7be50.js"><link rel="prefetch" href="/assets/js/40.a31c1496.js"><link rel="prefetch" href="/assets/js/41.27c2565c.js"><link rel="prefetch" href="/assets/js/42.a25ef2ab.js"><link rel="prefetch" href="/assets/js/43.efaadbff.js"><link rel="prefetch" href="/assets/js/44.3faf3796.js"><link rel="prefetch" href="/assets/js/45.50503727.js"><link rel="prefetch" href="/assets/js/46.403f729a.js"><link rel="prefetch" href="/assets/js/47.975a6be5.js"><link rel="prefetch" href="/assets/js/48.d64da873.js"><link rel="prefetch" href="/assets/js/49.48c6f88d.js"><link rel="prefetch" href="/assets/js/5.eaf7c607.js"><link rel="prefetch" href="/assets/js/50.16786cef.js"><link rel="prefetch" href="/assets/js/51.8e389422.js"><link rel="prefetch" href="/assets/js/52.dea2d9d2.js"><link rel="prefetch" href="/assets/js/53.e2194eb1.js"><link rel="prefetch" href="/assets/js/54.5153094d.js"><link rel="prefetch" href="/assets/js/55.9731f41f.js"><link rel="prefetch" href="/assets/js/57.44832b9e.js"><link rel="prefetch" href="/assets/js/58.70587729.js"><link rel="prefetch" href="/assets/js/59.1e0c3d02.js"><link rel="prefetch" href="/assets/js/6.cb709125.js"><link rel="prefetch" href="/assets/js/60.9193c449.js"><link rel="prefetch" href="/assets/js/61.8bc02144.js"><link rel="prefetch" href="/assets/js/62.fa22be53.js"><link rel="prefetch" href="/assets/js/63.8b5ce7b3.js"><link rel="prefetch" href="/assets/js/64.93a68911.js"><link rel="prefetch" href="/assets/js/65.0fde4119.js"><link rel="prefetch" href="/assets/js/66.a3bbc2d6.js"><link rel="prefetch" href="/assets/js/67.f1f33d12.js"><link rel="prefetch" href="/assets/js/68.82657b30.js"><link rel="prefetch" href="/assets/js/69.c08a7846.js"><link rel="prefetch" href="/assets/js/7.f2715068.js"><link rel="prefetch" href="/assets/js/70.e0202930.js"><link rel="prefetch" href="/assets/js/71.1540ba7d.js"><link rel="prefetch" href="/assets/js/8.6b9f5803.js"><link rel="prefetch" href="/assets/js/9.44285886.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.10f778cf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-0a66d9e0><div data-v-0a66d9e0><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-0a66d9e0 data-v-0a66d9e0><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-63a662dc data-v-0a66d9e0 data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-63a662dc data-v-63a662dc>一叶知秋</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-63a662dc data-v-63a662dc><input type="password" value="" data-v-63a662dc> <span data-v-63a662dc>请点击输入密码查看!</span> <button data-v-63a662dc>OK</button></label> <div class="footer" style="display:none;" data-v-63a662dc data-v-63a662dc><span data-v-63a662dc><i class="iconfont reco-theme" data-v-63a662dc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-63a662dc>vuePress-theme-reco</a></span> <span data-v-63a662dc><i class="iconfont reco-copyright" data-v-63a662dc></i> <a data-v-63a662dc><span data-v-63a662dc>MarkLin</span>
+            
+          <span data-v-63a662dc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-0a66d9e0><header class="navbar" data-v-0a66d9e0><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="一叶知秋" class="logo"> <span class="site-name">一叶知秋</span></a> <div class="links"><div class="color-picker"><a title="点击切换主题颜色" class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  前端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/实用技巧/" class="nav-link"><i class="iconfont undefined"></i>
+  实用技巧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  后端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端题库/" class="nav-link"><i class="iconfont undefined"></i>
+  前端题库
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/magical/" class="nav-link"><i class="iconfont undefined"></i>
+  职业性格测试
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hualin6" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0a66d9e0></div> <aside class="sidebar" data-v-0a66d9e0><div class="personal-info-wrapper" data-v-03833281 data-v-0a66d9e0><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    MarkLin
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>52</h3> <h6 data-v-03833281>Article</h6></div> <div data-v-03833281><h3 data-v-03833281>12</h3> <h6 data-v-03833281>Tag</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  前端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/实用技巧/" class="nav-link"><i class="iconfont undefined"></i>
+  实用技巧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  后端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端题库/" class="nav-link"><i class="iconfont undefined"></i>
+  前端题库
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/magical/" class="nav-link"><i class="iconfont undefined"></i>
+  职业性格测试
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hualin6" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-63a662dc data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-63a662dc data-v-63a662dc>前端常见面试题---1</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-63a662dc data-v-63a662dc><input type="password" value="" data-v-63a662dc> <span data-v-63a662dc>请点击输入密码查看!</span> <button data-v-63a662dc>OK</button></label> <div class="footer" style="display:none;" data-v-63a662dc data-v-63a662dc><span data-v-63a662dc><i class="iconfont reco-theme" data-v-63a662dc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-63a662dc>vuePress-theme-reco</a></span> <span data-v-63a662dc><i class="iconfont reco-copyright" data-v-63a662dc></i> <a data-v-63a662dc><span data-v-63a662dc>MarkLin</span>
+            
+          <span data-v-63a662dc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-0a66d9e0><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">前端常见面试题---1</h1> <div data-v-698a76ac><i class="iconfont reco-account" data-v-698a76ac><span data-v-698a76ac>MarkLin</span></i> <!----> <!----> <i class="iconfont reco-tag tags" data-v-698a76ac><span class="tag-item" data-v-698a76ac>JavaScript</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="_1-说一下对html语义化的理解"><a href="#_1-说一下对html语义化的理解" class="header-anchor">#</a> 1. 说一下对HTML语义化的理解?</h2> <p>语义化就是选择与语义相符合的标签</p> <p>html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;</p> <p>搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO;</p> <p>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</p> <p>通俗的讲语义化就是让正确的标签做正确的事情，比如段落用p标签，头部用header标签，主要内容用main标签，侧边栏用aside标签等等。</p> <h2 id="_2-meta-viewport-是做什么用的"><a href="#_2-meta-viewport-是做什么用的" class="header-anchor">#</a> 2. meta viewport 是做什么用的</h2> <p>将视口大小设置为可视区域的大小。</p> <p><strong>什么是视口</strong></p> <p>视口简单理解就是可视区域大小。
+在PC端，视口大小就是浏览器窗口可视区域的大小
+在移动端, 视口大小并不等于窗口大小, 移动端视口宽度被人为定义为了980</p> <p><strong>为什么移动端视口宽度是980而不是其他的值</strong></p> <p>因为过去网页的版心都是980的，为了能够让网页在移动端完美的展示, 所以将手机视口的大小定义为了980。</p> <p><strong>移动端自动将视口宽度设置为980带来的问题</strong></p> <blockquote><p>虽然移动端自动将视口宽度设置为980之后让我们可以很完美的看到整个网页，但是由于移动端的物理尺寸(设备宽度)是远远小于视口宽度的，所以为了能够在较小的范围内看到视口中所有的内容, 那么就必须将内容缩小。
+但是缩小后用户看到的是一个缩小版的整个页面，字体、图标和内容等等都非常小，想要点击或者查看都需要去放大页面进行操作，放大页面之后就会出现横向滚动条，这对用户体验来说是非常不好的。</p></blockquote> <p><strong>如何保证在移动端不自动缩放网页的尺寸</strong></p> <blockquote><p style="color:#000;">通过meta设置视口大小</p></blockquote> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>viewport 是指 web 页面上用户的可视区域。
+meta标签的属性:</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code>width=device-width 设置视口宽度等于设备的宽度
+initial-scale=1.0 初始缩放比例, 1不缩放
+maximum-scale：允许用户缩放到的最大比例
+minimum-scale：允许用户缩放到的最小比例
+user-scalable：用户是否可以手动缩放
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_3-在浏览器输入一个url的过程是怎么样的"><a href="#_3-在浏览器输入一个url的过程是怎么样的" class="header-anchor">#</a> 3.在浏览器输入一个URL的过程是怎么样的</h2> <ol><li><p>浏览器解析URL</p></li> <li><p>DNS 域名解析</p></li> <li><p>TCP 建立连接</p></li> <li><p>发送HTTP请求</p></li> <li><p>服务器处理请求</p></li> <li><p>返回响应结果</p></li> <li><p>接受响应</p></li> <li><p>浏览器解析渲染页面</p></li> <li><p>断开连接</p> <p>每个过程细节参考<a href="https://segmentfault.com/a/1190000017184701" target="_blank" rel="noopener noreferrer">各流程详解<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li></ol> <h2 id="_4-请描述一下-cookies-sessionstorage-和-localstorage-的区别"><a href="#_4-请描述一下-cookies-sessionstorage-和-localstorage-的区别" class="header-anchor">#</a> 4.请描述一下 cookies，sessionStorage 和 localStorage 的区别？</h2> <p>cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。</p> <ul><li>cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递。</li> <li>sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。</li></ul> <p>存储大小：</p> <ul><li>cookie数据大小不能超过4k。</li> <li>sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。</li></ul> <p>有效期时间：</p> <ul><li><p>localStorage    存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；</p></li> <li><p>sessionStorage  数据在当前浏览器窗口关闭后自动删除。</p></li> <li><p>cookie          设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</p></li></ul> <h2 id="_5-html5有哪些新特性、移除了那些元素-如何处理html5新标签的浏览器兼容问题-如何区分-html-和-html5"><a href="#_5-html5有哪些新特性、移除了那些元素-如何处理html5新标签的浏览器兼容问题-如何区分-html-和-html5" class="header-anchor">#</a> 5.html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</h2> <p>实现上：h5不再是SGML的子集。</p> <p>新特性：主要是关于图像，位置，存储，多任务等功能的增加。</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code>如：
+绘画canvas
+用于媒介回放的video和audio元素
+本地离线存储localStorage，长期存储，浏览器关闭之后数据不丢失
+sessionStorage的数据在浏览器关闭后自动删除
+
+语意化更好的内容元素，比如 article、footer、header、nav、section
+
+表单控件，calendar、date、time、email、url、search;
+
+新的技术webworker, websocket, Geolocation;
+
+移除的元素：
+  纯表现的元素：basefont，big，center，font, s，strike，tt，u;
+  对可用性产生负面影响的元素：frame，frameset，noframes；
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>处理兼容性： IE8/IE7/IE6支持通过document.createElement方法产生的标签，可以利用这一特性让这些浏览器支持HTML5新标签，浏览器支持新标签后，还需要添加标签默认的样式。</p> <p>也可以使用html5shim，可以让IE9或更低版本能支持html5</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://html5shim.googlecode.com/svn/trunk/html5.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>如何区分HTML5： DOCTYPE声明\新增的结构元素\功能元素</p> <h2 id="_6-常见的浏览器内核有哪些"><a href="#_6-常见的浏览器内核有哪些" class="header-anchor">#</a> 6.常见的浏览器内核有哪些</h2> <table><thead><tr><th style="text-align:center;">浏览器</th> <th style="text-align:center;">内  核</th></tr></thead> <tbody><tr><td style="text-align:center;">IE</td> <td style="text-align:center;">Trident内核</td></tr> <tr><td style="text-align:center;">FireFox</td> <td style="text-align:center;">Gecko内核</td></tr> <tr><td style="text-align:center;">Opera</td> <td style="text-align:center;">Presto内核</td></tr> <tr><td style="text-align:center;">Safari,Chrome</td> <td style="text-align:center;">Webkit内核</td></tr></tbody></table> <h2 id="_7-介绍一下你对浏览器内核的理解"><a href="#_7-介绍一下你对浏览器内核的理解" class="header-anchor">#</a> 7.介绍一下你对浏览器内核的理解？</h2> <p>主要分为两部分：</p> <ul><li>渲染引擎</li> <li>JS引擎</li></ul> <p>渲染引擎：取得网页的内容（html、xml、图片）、构造cssom树、计算网页的显示方式，比如各元素宽高，然后输出至显示器或打印机。</p> <p>js引擎：解析和执行javascript来实现网页的动态效果</p> <h2 id="_8-什么是闭包"><a href="#_8-什么是闭包" class="header-anchor">#</a> 8.什么是闭包?</h2> <p>闭包的实质是因为函数嵌套而形成的作用域链
+比如说：函数 A 内部有一个函数 B，函数 B 可以访问到函数 A 中的变量，那么函数 B 就是闭包</p> <p>用途：使用闭包主要是为了设计私有的方法和变量
+优点：可以避免变量被全局变量污染
+缺点：函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包
+解决方法：在退出函数之前，将不使用的局部变量全部删除</p> <h2 id="_9-手写选择排序和冒泡排序"><a href="#_9-手写选择排序和冒泡排序" class="header-anchor">#</a> 9.手写选择排序和冒泡排序</h2> <p>选择排序:</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+<span class="token comment">//  这里之所以是len-1，是因为到最后两个元素，交换位置，整个数组就已经排好序了。</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> min <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">// j = i+1是把与自己比较的情况给省略掉</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> min<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">// 利用ES6数组的解构赋值交换数据</span>
+            <span class="token punctuation">[</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> min<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>min<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> min<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[1, 2, 3, 4]</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>冒泡排序:</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> max <span class="token operator">=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 声明一个变量，作为标志位</span>
+    <span class="token comment">// 如果某次循环完后，没有任何两数进行交换，就将标志位设置为 true，表示排序完成</span>
+    <span class="token keyword">let</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> max <span class="token operator">-</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">// 利用ES6数组的解构赋值交换数据</span>
+            <span class="token punctuation">[</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[1, 2, 3, 4]</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h2 id="_10-数组去重和反转数组"><a href="#_10-数组去重和反转数组" class="header-anchor">#</a> 10.数组去重和反转数组</h2> <p><strong>数组去重</strong>
+方法 1:  扩展运算符和 Set 结构相结合，就可以去除数组的重复成员</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 去除数组的重复成员</span>
+<span class="token keyword">var</span> a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token comment">// [1, 2, 3, 4, 5]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>方法 2: Array.from()能把set结构转换为数组</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Array.from(new Set([1, 2, 2, 3, 4, 5, 5]));
+// [1, 2, 3, 4, 5]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>方法 3（ES5）</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">unique</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>temp<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      temp<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><strong>反转数组</strong></p> <p>要求
+输入: I am a student    输出: student a am I
+输入是数组 输出也是数组 <span style="color:red;">不允许用 split splice reverse</span></p> <p>解法一</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">reverseArray</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> distance <span class="token operator">=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> distance<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>distance <span class="token operator">-</span> i<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">reverseArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'I'</span><span class="token punctuation">,</span> <span class="token string">'am'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'student'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// [&quot;student&quot;, &quot;a&quot;, &quot;am&quot;, &quot;I&quot;]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>解法二</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">reverseArray</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> str <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> word <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">' '</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            word <span class="token operator">+=</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            result<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span>
+            word <span class="token operator">=</span> <span class="token string">''</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    result<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> result
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">reverseArray</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'I'</span><span class="token punctuation">,</span> <span class="token string">'am'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'student'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// [&quot;student&quot;, &quot;a&quot;, &quot;am&quot;, &quot;I&quot;]</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h2 id="_11-new一个对象的时候发生了什么"><a href="#_11-new一个对象的时候发生了什么" class="header-anchor">#</a> 11. new一个对象的时候发生了什么?</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">&quot;Alice&quot;</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>new一个对象的四个过程：</p> <p>1、创建一个空对象</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>2、让构造函数中的this指向新对象，并执行构造函数的函数体</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>3、设置新对象的__proto__属性指向构造函数的原型对象</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code>obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>4、判断构造函数的返回值类型，如果是值类型，则返回新对象。如果是引用类型，就返回这个引用类型的对象。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&quot;object&quot;</span><span class="token punctuation">)</span> 
+    p <span class="token operator">=</span> result<span class="token punctuation">;</span>
+<span class="token keyword">else</span> 
+    p <span class="token operator">=</span> obj<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_12-前端对后端返回的数据如何处理-json-xml"><a href="#_12-前端对后端返回的数据如何处理-json-xml" class="header-anchor">#</a> 12.前端对后端返回的数据如何处理(JSON/XML)</h2> <p>前端通过javascript对后端返回的json或者xml进行格式化处理</p> <p>JSON:</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> jsonObj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>后端返回的json字符串<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>jsonObj<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//格式化</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>XML：
+先使用 xml2json转化为JSON格式，然后再JSON.parse再JSON.stringfy进行格式化</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">//待转换的xml字符串</span>
+<span class="token keyword">var</span> xmlText <span class="token operator">=</span> <span class="token string">&quot;&lt;data id='123'&gt;&lt;test&gt;success&lt;/test&gt;&lt;result&gt;hangge.com&lt;/result&gt;&lt;/data&gt;&quot;</span><span class="token punctuation">;</span>
+ 
+<span class="token comment">//创建一个x2js对象进行转换</span>
+<span class="token keyword">var</span> x2js <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">X2JS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> jsonObj <span class="token operator">=</span> x2js<span class="token punctuation">.</span><span class="token function">xml_str2json</span><span class="token punctuation">(</span> xmlText <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_13-什么是mvvm-mvvm和mvc以及mvp有什么区别"><a href="#_13-什么是mvvm-mvvm和mvc以及mvp有什么区别" class="header-anchor">#</a> 13.什么是MVVM，MVVM和MVC以及MVP有什么区别？</h2> <p>MVVM最早由微软提出来，它借鉴了桌面应用程序的MVC思想，在前端页面中，把Model用纯JavaScript对象表示，View负责显示，两者做到了最大限度的分离，把Model和View关联起来的就是ViewModel。
+ViewModel负责把Model的数据同步到View显示出来，还负责把View的修改同步回Model
+View 和 Model 之间的同步工作完全是自动的，无需人为干涉（由viewModel完成，在这里指VUE）
+因此开发者只需关注业务逻辑，不需要手动操作DOM, 不需要关注数据状态的同步问题，复杂的数据状态维护完全由 MVVM 来统一管理</p> <p>MVVM的设计思想：关注Model的变化，让MVVM框架去自动更新DOM的状态，从而把开发者从操作DOM的繁琐步骤中解脱出来！</p> <p><strong>MVC和MVP的关系</strong>
+MVP是从经典的模式MVC演变而来，它们的基本思想有相通的地方：Controller/Presenter负责逻辑的处理，Model提供数 据，View负责显示。作为一种新的模式，MVP与MVC有着一个重大的区别：在MVP中View并不直接使用Model，它们之间的通信是通过 Presenter (MVC中的Controller)来进行的，所有的交互都发生在Presenter内部，而在MVC中View会直接从Model中读取数据而不是通过 Controller。</p> <p><strong>MVVM和MVP的关系</strong>
+而 MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。 唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。这样开发者就不用处理接收事件和View更新的工作，框架已经帮你做好了。</p> <h2 id="_14-说一下vue的优点"><a href="#_14-说一下vue的优点" class="header-anchor">#</a> 14.说一下Vue的优点</h2> <ol><li><p>体积小</p></li> <li><p>更高的运行效率</p> <p>基于虚拟DOM, 一种可以预选通过JavaScript进行各种计算, 把最终的DOM操作计算出来并优化的技术，由于这个DOM操作属于预处理操作， 并没有真正地操作DOM， 所以叫虚拟DOM。</p></li> <li><p>双向数据绑定</p> <p>让开发者不用再去操作DOM对象, 把更多的精力投入到业务逻辑上。</p></li> <li><p>生态丰富、学习成本低</p></li></ol> <h2 id="_15-vue的生命周期"><a href="#_15-vue的生命周期" class="header-anchor">#</a> 15.Vue的生命周期</h2> <p>通俗说就是 Vue 实例从创建到销毁的过程，就是生命周期。</p> <p>Vue生命周期可以分为四个阶段：创建、挂载、更新、销毁</p> <p>8个钩子函数:</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code>beforeCreate(){ ... }
+1. 创建(create)
+created(){ ... }
+beforeMount(){ ... }
+2. 挂载(mount)
+mounted(){ ... }
+beforeUpdate(){ ... }
+3. 更新(update)
+updated(){ ... }
+beforeDestroy(){ ... }
+4. 销毁(destroy)
+destroyed(){ ... }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_16-vue是如何实现双向数据绑定的-vue双向数据绑定原理"><a href="#_16-vue是如何实现双向数据绑定的-vue双向数据绑定原理" class="header-anchor">#</a> 16.Vue是如何实现双向数据绑定的(Vue双向数据绑定原理)</h2> <p>什么是双向数据绑定？Vue是一个MVVM框架，数据绑定简单来说，就是当数据发生变化时，相应的视图会进行更新，当视图更新时，数据也会跟着变化。</p> <p>MVVM 双向绑定，采用<strong>数据劫持结合发布者-订阅者模式</strong>的方式，通过<code>Object.defineProperty()</code>来劫持各个属性的 setter、getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</p> <p>Vue主要通过以下4个步骤实现数据双向绑定:
+1、实现一个数据监听器 Observer，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者
+2、实现一个指令解析器 Compile，对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数
+3、实现一个订阅者 Watcher，作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数，从而更新视图
+4、最后实现 MVVM 作为数据绑定的入口，整合监听器、解析器和订阅者</p> <p>流程图:</p> <p><img src="https://image-static.segmentfault.com/390/453/3904535370-5ae1b50517d79_articlex" alt=""></p> <h2 id="_17-你对vue项目进行了哪些优化"><a href="#_17-你对vue项目进行了哪些优化" class="header-anchor">#</a> 17.你对Vue项目进行了哪些优化</h2> <ol><li><p>不在模板里面写过多表达式</p></li> <li><p>循环调用子组件时添加key</p></li> <li><p>频繁切换的使用v-show，不频繁切换的使用v-if</p></li> <li><p>尽量少用float，可以用flex</p></li> <li><p>按需加载，可以用require或者import()按需加载需要的组件</p></li> <li><p>路由懒加载</p></li></ol> <h2 id="_18-为什么-0-1-0-2-0-3-请详述理由"><a href="#_18-为什么-0-1-0-2-0-3-请详述理由" class="header-anchor">#</a> 18.为什么 0.1 + 0.2 != 0.3，请详述理由</h2> <p>​	0.1 + 0.2 = 0.30000000000000004</p> <p>因为 JS 采用 IEEE 754 双精度版本（64位），并且只要采用 IEEE 754 的语言都有该问题。</p> <p>出现这个问题的原因，其实是因为数值的表示在计算机内部是用二进制的</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>十进制0.1
+    =&gt; 二进制0.00011001100110011…(循环0011) 
+    =&gt;尾数为1.1001100110011001100…1100（共52位，除了小数点左边的1），指数为-4（二进制移码为00000000010）,符号位为0
+    =&gt; 计算机存储为：0 00000000100 10011001100110011…11001
+    =&gt; 因为尾数最多52位，所以实际存储的值为0.00011001100110011001100110011001100110011001100110011001
+    而十进制0.2
+    =&gt; 二进制0.0011001100110011…(循环0011)
+    =&gt;尾数为1.1001100110011001100…1100（共52位，除了小数点左边的1），指数为-3（二进制移码为00000000011）,符号位为0
+    =&gt; 存储为：0 00000000011 10011001100110011…11001
+    因为尾数最多52位，所以实际存储的值为0.00110011001100110011001100110011001100110011001100110011
+ 　　　那么两者相加得：    
+0.00011001100110011001100110011001100110011001100110011001
++  0.00110011001100110011001100110011001100110011001100110011　（确认？？）
+    =  0.01001100110011001100110011001100110011001100110011001100
+    转换成10进制之后得到:0.30000000000000004
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>解决</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">+</span> <span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_19-盒子模型你是怎么理解的"><a href="#_19-盒子模型你是怎么理解的" class="header-anchor">#</a> 19.盒子模型你是怎么理解的？</h2> <div class="language-html line-numbers-mode"><pre class="language-html"><code>盒子模型有两种，W3C和IE盒子模型
+（1）w3c的盒模型width=content，不包括margin，padding,border
+（2）IE盒模型width=content+padding+border
+（3）box-sizng  border-box在已设定的宽度和高度之内去设定padding和border
+    content-box在已设定的高度和宽度之外设置padding和border
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_20-什么是跨域-以及如何解决跨域问题"><a href="#_20-什么是跨域-以及如何解决跨域问题" class="header-anchor">#</a> 20.什么是跨域，以及如何解决跨域问题？</h2> <p>跨域是相对于同源策略而言的。
+同源策略是一种约定，它是浏览器最核心也最基本的安全功能
+所谓同源是指: 协议，域名，端口都相同,就是同源, 否则就是跨域</p> <p><strong>同源策略带来的影响</strong>
+在同源策略下, 浏览器只允许Ajax请求同源的数据, 不允许请求不同源的数据
+但在企业开发中, 一般情况下为了提升网页的性能, 网页和数据都是单独存储在不同服务器上的
+这时如果再通过Ajax请求数据就会拿不到跨域数据</p> <p><strong>跨域解决方案</strong>
+现在主流跨域解决方案是jsonp
+JSONP让网页从跨域的地址那获取资料，即跨域读取数据</p> <p><strong>JSONP实现跨域访问的原理</strong></p> <p>1.在同一界面中可以定义多个script标签</p> <p>2.同一个界面中多个script标签中的数据可以相互访问</p> <p>3.可以通过script的src属性导入其它资源, 通过src属性导入其它资源的本质就是将资源拷贝到script标签中</p> <p>script的src属性不仅能导入本地资源, 还能导入远程资源</p> <p>4.由于script的src属性没有同源限制, 所以可以通过script的src属性来请求跨域数据</p> <p>更多方法</p> <p><img src="images/ky.jpg" alt="ky"></p> <p><strong>JSONP封装(参考jQuery)</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//myJsonp.js
+function obj2str(obj){
+    // 生成随机因子
+    obj.t = (Math.random()).replace(&quot;.&quot;, &quot;&quot;);
+    let arr = [];
+    for(let key in obj){
+        arr.push(key + &quot;=&quot; + encodeURI(obj[key]));
+    }
+    let str = arr.join(&quot;&amp;&quot;);
+    return str;
+}
+
+function myJsonp(options){
+    options = optionns || {};
+    // 1. 生成url地址
+    let url = options.url;
+    // 判断是否指定回调函数名称的key
+    if(options.jsonp){
+        url += &quot;?&quot; + options.jsonp + &quot;=&quot;;
+    }else{
+        url += &quot;?callback=&quot;;
+    }
+    // 判断是否指定回调函数名称
+    let callbackName = (&quot;jQuery&quot; + Math.random()).replace(&quot;.&quot;, &quot;&quot;);
+    if(options.jsonpCallback){
+        callbackName = options.jsonpCallback;       
+        url += options.jsonpCallback;
+    }else{
+        url += callbackName;
+    }
+    // 判断是否传递数据
+    if(options.data){
+        let str = obj2str(options.data);
+        url += &quot;&amp;&quot; + str;
+    }
+    
+    // 2. 获取跨域的回调函数
+    let oScript = document.createElement(&quot;script&quot;);;
+    oScript.src = url;
+    document.body.appentChild(oScript);
+    
+    // 3.定义回调函数
+    window[callbackName] = function(data){
+        // 删除已经获取了数据的script标签
+        document.body.removeChild(oScript);
+        // 将获取到的数据返回给外界
+        options.success(data);
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br></div></div><p>JSONP封装.html</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token operator">...</span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;myJsonp.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token function">myJSONP</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            url<span class="token operator">:</span> <span class="token string">&quot;http://127.0.0.1:80/jQuery/Ajax/jsonp.php&quot;</span><span class="token punctuation">,</span>
+            data<span class="token operator">:</span><span class="token punctuation">{</span>
+                <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;zs&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;age&quot;</span><span class="token operator">:</span> <span class="token number">22</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            jsonp<span class="token operator">:</span> <span class="token string">&quot;cb&quot;</span><span class="token punctuation">,</span>  <span class="token comment">// 告诉jQuery服务器在获取回调函数名称的时候需要用什么key来获取</span>
+            jsonpCallback<span class="token operator">:</span> <span class="token string">&quot;zs&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 告诉jQuery服务器在获取回调函数名称的时候回调函数的名称是什么</span>
+            <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">...</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>jsonp.php(后台)</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token operator">&lt;</span><span class="token operator">?</span>php
+<span class="token comment">// 1.拿到传递过来的数据</span>
+$name <span class="token operator">=</span> $_GET<span class="token punctuation">[</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+$age <span class="token operator">=</span> $_GET<span class="token punctuation">[</span><span class="token string">&quot;age&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+$arr <span class="token operator">=</span> <span class="token function">array</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token operator">=&gt;</span>$name<span class="token punctuation">,</span> <span class="token string">&quot;age&quot;</span><span class="token operator">=&gt;</span>$age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+$data <span class="token operator">=</span> <span class="token function">json_encode</span><span class="token punctuation">(</span>$arr<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 将数组转换为json</span>
+
+<span class="token comment">// 2.拿到回调函数的名称</span>
+$cb <span class="token operator">=</span> $_GET<span class="token punctuation">[</span><span class="token string">&quot;cb&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   
+<span class="token comment">// 3.返回数据</span>
+echo $cb<span class="token punctuation">.</span><span class="token string">&quot;(&quot;</span><span class="token punctuation">.</span>$data<span class="token punctuation">.</span><span class="token string">&quot;);&quot;</span><span class="token punctuation">;</span>  
+<span class="token operator">?</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">LastUpdated: </span> <span class="time">12/13/2020, 11:16:58 PM</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div></div><div></div><APlayer audio="" fixed="true" mini="true" autoplay="autoplay" theme="#f9bcdd" loop="loop" order="random" preload="auto" volume="0.1" mutex="true" lrc-type="0" list-folded="true" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 一叶知秋
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><canvas id="vuepress-canvas-cursor"></canvas><canvas id="vuepress-canvas-ribbon"></canvas></div></div>
+    <script src="/assets/js/app.92ec518b.js" defer></script><script src="/assets/js/3.9492ddf1.js" defer></script><script src="/assets/js/1.1c321afd.js" defer></script><script src="/assets/js/56.1e5c12ee.js" defer></script>
+  </body>
+</html>
