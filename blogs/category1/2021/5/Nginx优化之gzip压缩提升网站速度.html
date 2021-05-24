@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx优化之gzip压缩提升网站速度 | 一叶知秋</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?db7a76bcaf69e72cf71ae94cfb553780";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <script language="javascript" type="text/javascript" src="/js/medium-zoom.min.js"></script>
+    <meta name="description" content="">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.d42733c4.css" as="style"><link rel="preload" href="/assets/js/app.92ed472b.js" as="script"><link rel="preload" href="/assets/js/3.162d37eb.js" as="script"><link rel="preload" href="/assets/js/1.0ce505e2.js" as="script"><link rel="preload" href="/assets/js/86.4e48b3fe.js" as="script"><link rel="prefetch" href="/assets/js/10.630ecdea.js"><link rel="prefetch" href="/assets/js/11.5a341164.js"><link rel="prefetch" href="/assets/js/12.e0d63fcb.js"><link rel="prefetch" href="/assets/js/13.43374168.js"><link rel="prefetch" href="/assets/js/14.bbde23b9.js"><link rel="prefetch" href="/assets/js/15.29d38ae3.js"><link rel="prefetch" href="/assets/js/16.291084bf.js"><link rel="prefetch" href="/assets/js/17.ad30f64b.js"><link rel="prefetch" href="/assets/js/18.df3e1e34.js"><link rel="prefetch" href="/assets/js/19.72d81ffe.js"><link rel="prefetch" href="/assets/js/20.6d53cab5.js"><link rel="prefetch" href="/assets/js/21.b6650253.js"><link rel="prefetch" href="/assets/js/22.6081d540.js"><link rel="prefetch" href="/assets/js/23.0c8991aa.js"><link rel="prefetch" href="/assets/js/24.6b0d7684.js"><link rel="prefetch" href="/assets/js/25.6c850012.js"><link rel="prefetch" href="/assets/js/26.7494db31.js"><link rel="prefetch" href="/assets/js/27.5d14613b.js"><link rel="prefetch" href="/assets/js/28.c5c2f226.js"><link rel="prefetch" href="/assets/js/29.f5672a07.js"><link rel="prefetch" href="/assets/js/30.9a32ed50.js"><link rel="prefetch" href="/assets/js/31.e7913834.js"><link rel="prefetch" href="/assets/js/32.4f9fad0c.js"><link rel="prefetch" href="/assets/js/33.3e1d539c.js"><link rel="prefetch" href="/assets/js/34.49f7922d.js"><link rel="prefetch" href="/assets/js/35.077330c7.js"><link rel="prefetch" href="/assets/js/36.2523c8fc.js"><link rel="prefetch" href="/assets/js/37.89ae477c.js"><link rel="prefetch" href="/assets/js/38.b8ba78d7.js"><link rel="prefetch" href="/assets/js/39.ac7ec5a4.js"><link rel="prefetch" href="/assets/js/4.5783aef3.js"><link rel="prefetch" href="/assets/js/40.7249f84d.js"><link rel="prefetch" href="/assets/js/41.29c97a44.js"><link rel="prefetch" href="/assets/js/42.0a5f16b7.js"><link rel="prefetch" href="/assets/js/43.74402055.js"><link rel="prefetch" href="/assets/js/44.e98aabb8.js"><link rel="prefetch" href="/assets/js/45.f36246cd.js"><link rel="prefetch" href="/assets/js/46.3144848a.js"><link rel="prefetch" href="/assets/js/47.84362f09.js"><link rel="prefetch" href="/assets/js/48.0240f9fc.js"><link rel="prefetch" href="/assets/js/49.0db84846.js"><link rel="prefetch" href="/assets/js/5.e36f5d89.js"><link rel="prefetch" href="/assets/js/50.db9a6bd7.js"><link rel="prefetch" href="/assets/js/51.ab2ef5df.js"><link rel="prefetch" href="/assets/js/52.a1438414.js"><link rel="prefetch" href="/assets/js/53.f9907d31.js"><link rel="prefetch" href="/assets/js/54.dab1f9c6.js"><link rel="prefetch" href="/assets/js/55.eca2b3b9.js"><link rel="prefetch" href="/assets/js/56.cbd35699.js"><link rel="prefetch" href="/assets/js/57.190c9d95.js"><link rel="prefetch" href="/assets/js/58.bc4b84c2.js"><link rel="prefetch" href="/assets/js/59.65d2f6c8.js"><link rel="prefetch" href="/assets/js/6.6fc0f41a.js"><link rel="prefetch" href="/assets/js/60.67dd6ed8.js"><link rel="prefetch" href="/assets/js/61.37864fce.js"><link rel="prefetch" href="/assets/js/62.20d36fb6.js"><link rel="prefetch" href="/assets/js/63.09024754.js"><link rel="prefetch" href="/assets/js/64.8c107708.js"><link rel="prefetch" href="/assets/js/65.24a37c51.js"><link rel="prefetch" href="/assets/js/66.c1c0e1ad.js"><link rel="prefetch" href="/assets/js/67.8a29d172.js"><link rel="prefetch" href="/assets/js/68.4bd18515.js"><link rel="prefetch" href="/assets/js/69.d7e46b5c.js"><link rel="prefetch" href="/assets/js/7.001da9dd.js"><link rel="prefetch" href="/assets/js/70.8c31bbe9.js"><link rel="prefetch" href="/assets/js/71.23153379.js"><link rel="prefetch" href="/assets/js/72.ca512f1c.js"><link rel="prefetch" href="/assets/js/73.0d3a735b.js"><link rel="prefetch" href="/assets/js/74.ce6b03de.js"><link rel="prefetch" href="/assets/js/75.e26973a2.js"><link rel="prefetch" href="/assets/js/76.f70dfc18.js"><link rel="prefetch" href="/assets/js/77.b99a8482.js"><link rel="prefetch" href="/assets/js/78.bac1dae0.js"><link rel="prefetch" href="/assets/js/79.db16f364.js"><link rel="prefetch" href="/assets/js/8.2135c4dc.js"><link rel="prefetch" href="/assets/js/80.8834cad9.js"><link rel="prefetch" href="/assets/js/81.524c6a9b.js"><link rel="prefetch" href="/assets/js/82.7d2bdf92.js"><link rel="prefetch" href="/assets/js/83.8c2daba1.js"><link rel="prefetch" href="/assets/js/84.9c08ce0e.js"><link rel="prefetch" href="/assets/js/85.7278754b.js"><link rel="prefetch" href="/assets/js/87.50f462b6.js"><link rel="prefetch" href="/assets/js/88.3c1a2f78.js"><link rel="prefetch" href="/assets/js/89.34907762.js"><link rel="prefetch" href="/assets/js/9.2afdc30a.js"><link rel="prefetch" href="/assets/js/90.19d53173.js"><link rel="prefetch" href="/assets/js/91.cedd43d5.js"><link rel="prefetch" href="/assets/js/92.838691c0.js"><link rel="prefetch" href="/assets/js/93.ac26fc72.js"><link rel="prefetch" href="/assets/js/94.bba0fba6.js"><link rel="prefetch" href="/assets/js/95.a3b3f0db.js"><link rel="prefetch" href="/assets/js/96.eea3dd94.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d42733c4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-0a66d9e0><div data-v-0a66d9e0><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-0a66d9e0 data-v-0a66d9e0><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-63a662dc data-v-0a66d9e0 data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-63a662dc data-v-63a662dc>一叶知秋</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-63a662dc data-v-63a662dc><input type="password" value="" data-v-63a662dc> <span data-v-63a662dc>请点击输入密码查看!</span> <button data-v-63a662dc>OK</button></label> <div class="footer" style="display:none;" data-v-63a662dc data-v-63a662dc><span data-v-63a662dc><i class="iconfont reco-theme" data-v-63a662dc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-63a662dc>vuePress-theme-reco</a></span> <span data-v-63a662dc><i class="iconfont reco-copyright" data-v-63a662dc></i> <a data-v-63a662dc><span data-v-63a662dc>MarkLin</span>
+            
+          <span data-v-63a662dc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-0a66d9e0><header class="navbar" data-v-0a66d9e0><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="一叶知秋" class="logo"> <span class="site-name">一叶知秋</span></a> <div class="links"><div class="color-picker"><a title="点击切换主题颜色" class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  前端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/实用技巧/" class="nav-link"><i class="iconfont undefined"></i>
+  实用技巧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  后端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端题库/" class="nav-link"><i class="iconfont undefined"></i>
+  前端题库
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/magical/" class="nav-link"><i class="iconfont undefined"></i>
+  职业性格测试
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hualin6" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0a66d9e0></div> <aside class="sidebar" data-v-0a66d9e0><div class="personal-info-wrapper" data-v-03833281 data-v-0a66d9e0><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    MarkLin
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>77</h3> <h6 data-v-03833281>Article</h6></div> <div data-v-03833281><h3 data-v-03833281>18</h3> <h6 data-v-03833281>Tag</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  前端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/实用技巧/" class="nav-link"><i class="iconfont undefined"></i>
+  实用技巧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  后端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端题库/" class="nav-link"><i class="iconfont undefined"></i>
+  前端题库
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/magical/" class="nav-link"><i class="iconfont undefined"></i>
+  职业性格测试
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hualin6" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-63a662dc data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-63a662dc data-v-63a662dc>Nginx优化之gzip压缩提升网站速度</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-63a662dc data-v-63a662dc><input type="password" value="" data-v-63a662dc> <span data-v-63a662dc>请点击输入密码查看!</span> <button data-v-63a662dc>OK</button></label> <div class="footer" style="display:none;" data-v-63a662dc data-v-63a662dc><span data-v-63a662dc><i class="iconfont reco-theme" data-v-63a662dc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-63a662dc>vuePress-theme-reco</a></span> <span data-v-63a662dc><i class="iconfont reco-copyright" data-v-63a662dc></i> <a data-v-63a662dc><span data-v-63a662dc>MarkLin</span>
+            
+          <span data-v-63a662dc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-0a66d9e0><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">Nginx优化之gzip压缩提升网站速度</h1> <div data-v-698a76ac><i class="iconfont reco-account" data-v-698a76ac><span data-v-698a76ac>MarkLin</span></i> <i class="iconfont reco-date" data-v-698a76ac><span data-v-698a76ac>2021-05-02</span></i> <!----> <i class="iconfont reco-tag tags" data-v-698a76ac><span class="tag-item" data-v-698a76ac>Nginx</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="nginx优化之gzip压缩提升网站速度"><a href="#nginx优化之gzip压缩提升网站速度" class="header-anchor">#</a> Nginx优化之gzip压缩提升网站速度</h1> <p>gzip配置的常用参数</p> <p>gzip on|off;  #是否开启gzip</p> <p>gzip_buffers 32 4K| 16 8K #缓冲(压缩在内存中缓冲几块? 每块多大?)</p> <p>gzip_comp_level [1-9] #推荐6 压缩级别(级别越高,压的越小,越浪费CPU计算资源)</p> <p>gzip_disable #正则匹配UA 什么样的Uri不进行gzip</p> <p>gzip_min_length 200 # 开始压缩的最小长度(再小就不要压缩了,意义不在)</p> <p>gzip_http_version 1.0|1.1 # 开始压缩的http协议版本(可以不设置,目前几乎全是1.1协议)</p> <p>gzip_proxied          # 设置请求者代理服务器,该如何缓存内容</p> <p>gzip_types text/plain application/xml # 对哪些类型的文件用压缩 如txt,xml,html ,css</p> <p>gzip_vary on|off  # 是否传输gzip压缩标志</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>	gzip on;
+	gzip_buffers 32 4K;
+	gzip_comp_level 6;
+  gzip_min_length 1K;
+	gzip_types text/plain application/x-javascript text/css text/javascript application/x-httpd-php image/jpeg image/gif image/png;
+  gzip_disable &quot;MSIE [1-6]\.&quot;; #配置禁用gzip条件，支持正则。此处表示ie6及以下不启用gzip（因为ie低版本不支持）
+  gzip_vary on;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h1 id="nginx下gzip配置参数详解"><a href="#nginx下gzip配置参数详解" class="header-anchor">#</a> nginx下gzip配置参数详解</h1> <p><strong>gzip</strong></p> <p>语法: gzip on|off
+默认值: gzip off
+作用域: http, server, location, if (x) location
+开启或者关闭gzip模块</p> <p><strong>gzip_buffers</strong></p> <p>语法: gzip_buffers number size
+默认值: gzip_buffers 4 4k/8k
+作用域: http, server, location
+设置系统获取几个单位的缓存用于存储gzip的压缩结果数据流。 例如 4 4k 代表以4k为单位，按照原始数据大小以4k为单位的4倍申请内存。 4 8k 代表以8k为单位，按照原始数据大小以8k为单位的4倍申请内存。</p> <p>如果没有设置，默认值是申请跟原始数据相同大小的内存空间去存储gzip压缩结果。</p> <p><strong>gzip_comp_level</strong></p> <p>语法: gzip_comp_level 1..9
+默认值: gzip_comp_level 1
+作用域: http, server, location
+gzip压缩比，1 压缩比最小处理速度最快，9 压缩比最大但处理最慢（传输快但比较消耗cpu）。</p> <p><strong>gzip_min_length</strong></p> <p>语法: gzip_min_length length
+默认值: gzip_min_length 0
+作用域: http, server, location
+设置允许压缩的页面最小字节数，页面字节数从header头中的Content-Length中进行获取。
+默认值是0，不管页面多大都压缩。
+建议设置成大于1k的字节数，小于1k可能会越压越大。 即: gzip_min_length 1024</p> <p><strong>gzip_http_version</strong></p> <p>语法: gzip_http_version 1.0|1.1
+默认值: gzip_http_version 1.1
+作用域: http, server, location
+识别http的协议版本。由于早期的一些浏览器或者http客户端，可能不支持gzip自解压，用户就会看到乱码，所以做一些判断还是有必要的。 注：21世纪都来了，现在除了类似于百度的蜘蛛之类的东西不支持自解压，99.99%的浏览器基本上都支持gzip解压了，所以可以不用设这个值,保持系统默认即可。</p> <p><strong>gzip_proxied</strong></p> <p>语法: gzip_proxied [off|expired|no-cache|no-store|private|no_last_modified|no_etag|auth|any] …
+默认值: gzip_proxied off
+作用域: http, server, location
+Nginx作为反向代理的时候启用，开启或者关闭后端服务器返回的结果，匹配的前提是后端服务器必须要返回包含”Via”的 header头。</p> <p>off – 关闭所有的代理结果数据的压缩
+expired – 启用压缩，如果header头中包含 “Expires” 头信息
+no-cache – 启用压缩，如果header头中包含 “Cache-Control:no-cache” 头信息
+no-store – 启用压缩，如果header头中包含 “Cache-Control:no-store” 头信息
+private – 启用压缩，如果header头中包含 “Cache-Control:private” 头信息
+no_last_modified – 启用压缩,如果header头中不包含 “Last-Modified” 头信息
+no_etag – 启用压缩 ,如果header头中不包含 “ETag” 头信息
+auth – 启用压缩 , 如果header头中包含 “Authorization” 头信息
+any – 无条件启用压缩</p> <p><strong>gzip_types</strong></p> <p>语法: gzip_types mime-type [mime-type ...]
+默认值: gzip_types text/html
+作用域: http, server, location
+匹配MIME类型进行压缩，（无论是否指定）”text/html”类型总是会被压缩的。
+注意：如果作为http server来使用，主配置文件中要包含文件类型配置文件</p> <p>如果你希望压缩常规的文件类型，可以写成这个样子</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>http
+{
+include conf/mime.types;
+gzip on;
+gzip_min_length 1000;
+gzip_buffers 4 8k;
+gzip_http_version 1.1;
+gzip_types text/plain application/x-javascript text/css text/html application/xml;
+
+……
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>默认情况下，Nginx的gzip压缩是关闭的
+同时，Nginx默认只对text/html进行压缩
+所以，开启gzip的指令如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>gzip on;
+gzip_http_version 1.0;
+gzip_disable “MSIE [1-6].”;
+gzip_types text/plain application/x-javascript text/css text/javascript;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>如果你想让图片也开启gzip压缩，那么用以下这段吧：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>gzip_types text/plain application/x-javascript text/css text/javascript application/x-httpd-php image/jpeg image/gif image/png;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>注意：</strong></p> <ol><li><p>其中的gzip_http_version的设置，它的默认值是1.1，就是说对HTTP/1.1协议的请求才会进行gzip压缩，如果我们使用了proxy_pass进行反向代理，那么nginx和后端的upstream server之间是用HTTP/1.0协议通信的</p> <p>This module makes it possible to transfer requests to another server.
+It is an HTTP/1.0 proxy without the ability for keep-alive requests yet. (As a result, backend connections are created and destroyed on every request.) Nginx talks HTTP/1.1 to the browser and HTTP/1.0 to the backend server. As such it handles keep-alive to the browser.</p> <p>如果我们使用nginx通过反向代理做Cache Server，而且前端的nginx没有开启gzip，同时，我们后端的nginx上没有设置gzip_http_version为1.0，那么Cache的url将不会进行gzip压缩</p></li> <li><p>gzip_disable的设置是禁用IE6的gzip压缩，又是因为杯具的IE6
+IE6的某些版本对gzip的压缩支持很不好，会造成页面的假死，今天产品的同学就测试出了这个问题，后来调试后，发现是对img进行gzip后造成IE6的假死，把对img的gzip压缩去掉后就正常了，为了确保其它的IE6版本不出问题，所以就加上了gzip_disable的设置</p></li></ol></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">LastUpdated: </span> <span class="time">5/24/2021, 11:08:15 PM</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div></div><div></div><APlayer audio="" fixed="true" mini="true" autoplay="autoplay" theme="#f9bcdd" loop="loop" order="random" preload="auto" volume="0.1" mutex="true" lrc-type="0" list-folded="true" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 一叶知秋
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><canvas id="vuepress-canvas-cursor"></canvas><canvas id="vuepress-canvas-ribbon"></canvas></div></div>
+    <script src="/assets/js/app.92ed472b.js" defer></script><script src="/assets/js/3.162d37eb.js" defer></script><script src="/assets/js/1.0ce505e2.js" defer></script><script src="/assets/js/86.4e48b3fe.js" defer></script>
+  </body>
+</html>
