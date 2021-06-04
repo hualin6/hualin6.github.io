@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>WSL2子系统安装CentOS8及源码编译Nginx1.18+PHP7.4+MySql8.0开发环境 | 一叶知秋</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?db7a76bcaf69e72cf71ae94cfb553780";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <script language="javascript" type="text/javascript" src="/js/medium-zoom.min.js"></script>
+    <meta name="description" content="">
+    <meta http-quiv="pragma" cotent="no-cache">
+    <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+    <meta http-quiv="expires" cotent="0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.d42733c4.css" as="style"><link rel="preload" href="/assets/js/app.33ac6e59.js" as="script"><link rel="preload" href="/assets/js/3.162d37eb.js" as="script"><link rel="preload" href="/assets/js/1.0ce505e2.js" as="script"><link rel="preload" href="/assets/js/89.cf3bae40.js" as="script"><link rel="prefetch" href="/assets/js/10.630ecdea.js"><link rel="prefetch" href="/assets/js/11.5a341164.js"><link rel="prefetch" href="/assets/js/12.c8dda152.js"><link rel="prefetch" href="/assets/js/13.a5745eb3.js"><link rel="prefetch" href="/assets/js/14.4df40cb8.js"><link rel="prefetch" href="/assets/js/15.3fdaab24.js"><link rel="prefetch" href="/assets/js/16.d9aa9fb9.js"><link rel="prefetch" href="/assets/js/17.9466c6a5.js"><link rel="prefetch" href="/assets/js/18.df3e1e34.js"><link rel="prefetch" href="/assets/js/19.72d81ffe.js"><link rel="prefetch" href="/assets/js/20.045e186d.js"><link rel="prefetch" href="/assets/js/21.8f74ab81.js"><link rel="prefetch" href="/assets/js/22.205bbfea.js"><link rel="prefetch" href="/assets/js/23.836cb3c2.js"><link rel="prefetch" href="/assets/js/24.d99de077.js"><link rel="prefetch" href="/assets/js/25.96cc145e.js"><link rel="prefetch" href="/assets/js/26.84f36187.js"><link rel="prefetch" href="/assets/js/27.58fb9ac2.js"><link rel="prefetch" href="/assets/js/28.9f5d5067.js"><link rel="prefetch" href="/assets/js/29.1626a076.js"><link rel="prefetch" href="/assets/js/30.7f03e3e5.js"><link rel="prefetch" href="/assets/js/31.b5edd545.js"><link rel="prefetch" href="/assets/js/32.4f9fad0c.js"><link rel="prefetch" href="/assets/js/33.db20e505.js"><link rel="prefetch" href="/assets/js/34.1a7c76cb.js"><link rel="prefetch" href="/assets/js/35.0ea8a028.js"><link rel="prefetch" href="/assets/js/36.5ff7e5c8.js"><link rel="prefetch" href="/assets/js/37.89ae477c.js"><link rel="prefetch" href="/assets/js/38.f9e755d3.js"><link rel="prefetch" href="/assets/js/39.ac7ec5a4.js"><link rel="prefetch" href="/assets/js/4.5783aef3.js"><link rel="prefetch" href="/assets/js/40.744d055d.js"><link rel="prefetch" href="/assets/js/41.030eb8d1.js"><link rel="prefetch" href="/assets/js/42.eb081e65.js"><link rel="prefetch" href="/assets/js/43.a7e16231.js"><link rel="prefetch" href="/assets/js/44.46f41942.js"><link rel="prefetch" href="/assets/js/45.3429e57a.js"><link rel="prefetch" href="/assets/js/46.5a3dec77.js"><link rel="prefetch" href="/assets/js/47.97934a14.js"><link rel="prefetch" href="/assets/js/48.532f38b4.js"><link rel="prefetch" href="/assets/js/49.0db84846.js"><link rel="prefetch" href="/assets/js/5.e36f5d89.js"><link rel="prefetch" href="/assets/js/50.034802a3.js"><link rel="prefetch" href="/assets/js/51.5106e401.js"><link rel="prefetch" href="/assets/js/52.5e003e1c.js"><link rel="prefetch" href="/assets/js/53.9c0a5207.js"><link rel="prefetch" href="/assets/js/54.ae723624.js"><link rel="prefetch" href="/assets/js/55.800b7fad.js"><link rel="prefetch" href="/assets/js/56.623ea453.js"><link rel="prefetch" href="/assets/js/57.190c9d95.js"><link rel="prefetch" href="/assets/js/58.bc4b84c2.js"><link rel="prefetch" href="/assets/js/59.65d2f6c8.js"><link rel="prefetch" href="/assets/js/6.6fc0f41a.js"><link rel="prefetch" href="/assets/js/60.f048ca4a.js"><link rel="prefetch" href="/assets/js/61.37864fce.js"><link rel="prefetch" href="/assets/js/62.06b456e8.js"><link rel="prefetch" href="/assets/js/63.2f5350f1.js"><link rel="prefetch" href="/assets/js/64.8c107708.js"><link rel="prefetch" href="/assets/js/65.443b3f1d.js"><link rel="prefetch" href="/assets/js/66.08dc20ff.js"><link rel="prefetch" href="/assets/js/67.8c6d2db4.js"><link rel="prefetch" href="/assets/js/68.4bd18515.js"><link rel="prefetch" href="/assets/js/69.efca1c71.js"><link rel="prefetch" href="/assets/js/7.001da9dd.js"><link rel="prefetch" href="/assets/js/70.d56482d8.js"><link rel="prefetch" href="/assets/js/71.e44300f2.js"><link rel="prefetch" href="/assets/js/72.39e752ac.js"><link rel="prefetch" href="/assets/js/73.a4f33f28.js"><link rel="prefetch" href="/assets/js/74.d1c59b2a.js"><link rel="prefetch" href="/assets/js/75.854bf7c8.js"><link rel="prefetch" href="/assets/js/76.3d632814.js"><link rel="prefetch" href="/assets/js/77.0d5715f3.js"><link rel="prefetch" href="/assets/js/78.f4b3ec29.js"><link rel="prefetch" href="/assets/js/79.db16f364.js"><link rel="prefetch" href="/assets/js/8.bf41ec96.js"><link rel="prefetch" href="/assets/js/80.01992ec7.js"><link rel="prefetch" href="/assets/js/81.2f8bbf9e.js"><link rel="prefetch" href="/assets/js/82.d7892e29.js"><link rel="prefetch" href="/assets/js/83.e91a3435.js"><link rel="prefetch" href="/assets/js/84.63400a98.js"><link rel="prefetch" href="/assets/js/85.b55e1bde.js"><link rel="prefetch" href="/assets/js/86.41d7c3ba.js"><link rel="prefetch" href="/assets/js/87.f462d25d.js"><link rel="prefetch" href="/assets/js/88.d8f92768.js"><link rel="prefetch" href="/assets/js/9.2afdc30a.js"><link rel="prefetch" href="/assets/js/90.78de6409.js"><link rel="prefetch" href="/assets/js/91.3c9ceca0.js"><link rel="prefetch" href="/assets/js/92.80a15262.js"><link rel="prefetch" href="/assets/js/93.3ab67328.js"><link rel="prefetch" href="/assets/js/94.f14dff88.js"><link rel="prefetch" href="/assets/js/95.cd9319de.js"><link rel="prefetch" href="/assets/js/96.1e44bf86.js"><link rel="prefetch" href="/assets/js/97.743033a7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d42733c4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-0a66d9e0><div data-v-0a66d9e0><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-0a66d9e0 data-v-0a66d9e0><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-63a662dc data-v-0a66d9e0 data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-63a662dc data-v-63a662dc>一叶知秋</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-63a662dc data-v-63a662dc><input type="password" value="" data-v-63a662dc> <span data-v-63a662dc>请点击输入密码查看!</span> <button data-v-63a662dc>OK</button></label> <div class="footer" style="display:none;" data-v-63a662dc data-v-63a662dc><span data-v-63a662dc><i class="iconfont reco-theme" data-v-63a662dc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-63a662dc>vuePress-theme-reco</a></span> <span data-v-63a662dc><i class="iconfont reco-copyright" data-v-63a662dc></i> <a data-v-63a662dc><span data-v-63a662dc>MarkLin</span>
+            
+          <span data-v-63a662dc>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-0a66d9e0><header class="navbar" data-v-0a66d9e0><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="一叶知秋" class="logo"> <span class="site-name">一叶知秋</span></a> <div class="links"><div class="color-picker"><a title="点击切换主题颜色" class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  前端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/实用技巧/" class="nav-link"><i class="iconfont undefined"></i>
+  实用技巧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  后端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端题库/" class="nav-link"><i class="iconfont undefined"></i>
+  前端题库
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/magical/" class="nav-link"><i class="iconfont undefined"></i>
+  职业性格测试
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hualin6" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0a66d9e0></div> <aside class="sidebar" data-v-0a66d9e0><div class="personal-info-wrapper" data-v-03833281 data-v-0a66d9e0><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    MarkLin
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>78</h3> <h6 data-v-03833281>Article</h6></div> <div data-v-03833281><h3 data-v-03833281>20</h3> <h6 data-v-03833281>Tag</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/前端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  前端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/实用技巧/" class="nav-link"><i class="iconfont undefined"></i>
+  实用技巧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/后端知识/" class="nav-link"><i class="iconfont undefined"></i>
+  后端知识
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端题库/" class="nav-link"><i class="iconfont undefined"></i>
+  前端题库
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/magical/" class="nav-link"><i class="iconfont undefined"></i>
+  职业性格测试
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/about/" class="nav-link"><i class="iconfont reco-account"></i>
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hualin6" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-63a662dc data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-63a662dc data-v-63a662dc>WSL2子系统安装CentOS8及源码编译Nginx1.18+PHP7.4+MySql8.0开发环境</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-63a662dc data-v-63a662dc><input type="password" value="" data-v-63a662dc> <span data-v-63a662dc>请点击输入密码查看!</span> <button data-v-63a662dc>OK</button></label> <div class="footer" style="display:none;" data-v-63a662dc data-v-63a662dc><span data-v-63a662dc><i class="iconfont reco-theme" data-v-63a662dc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-63a662dc>vuePress-theme-reco</a></span> <span data-v-63a662dc><i class="iconfont reco-copyright" data-v-63a662dc></i> <a data-v-63a662dc><span data-v-63a662dc>MarkLin</span>
+            
+          <span data-v-63a662dc>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-0a66d9e0><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">WSL2子系统安装CentOS8及源码编译Nginx1.18+PHP7.4+MySql8.0开发环境</h1> <div data-v-698a76ac><i class="iconfont reco-account" data-v-698a76ac><span data-v-698a76ac>MarkLin</span></i> <i class="iconfont reco-date" data-v-698a76ac><span data-v-698a76ac>2021-06-01</span></i> <!----> <i class="iconfont reco-tag tags" data-v-698a76ac><span class="tag-item" data-v-698a76ac>WSL2</span><span class="tag-item" data-v-698a76ac>CentOS8</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="wsl2子系统安装centos8及源码编译nginx1-18-php7-4-mysql8-0开发环境"><a href="#wsl2子系统安装centos8及源码编译nginx1-18-php7-4-mysql8-0开发环境" class="header-anchor">#</a> WSL2子系统安装CentOS8及源码编译Nginx1.18+PHP7.4+MySql8.0开发环境</h1> <h2 id="一、wsl2-安装-centos8"><a href="#一、wsl2-安装-centos8" class="header-anchor">#</a> 一、WSL2 安装 CentOS8</h2> <p><strong>1、安装 Chocolatey</strong></p> <p>NuGet（读作New Get）是用于微软.NET开发平台的软件包管理器，是一个Visual Studio的扩展。Chocolatey 是基于 NuGet 的一个软件包管理器，就像 Linux 中的 yum 或 apt 一样，在 Windows10 中也可以用命令行安装程序了。</p> <p>右键单击开始菜单，选择 Windows PowerShell(管理员)，打开一个具有管理员权限的 PowerShell 窗口，输入命令并回车：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>完成后，输入命令：choco ，如果能正确显示版本号，说明安装成功。</p> <p>chocolatey 安装报错失败解决办法</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>警告: An existing Chocolatey installation was detected. Installation will not continue.
+For security reasons, this script will not overwrite existing installations.
+ 
+Please use choco upgrade chocolatey to handle upgrades of Chocolatey itself.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>把C:\ProgramData\chocolatey这个目录删除，再重新执行安装程序就可以了。</p> <p>禁止运行远程脚本，输入以下命令将执行策略设置为允许签名的远程脚本就行了。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>FullyQualifiedErrorId : Unable to unzip package using 7zip. Perhaps try setting $env:chocolateyUseWindowsCompression = 'true' and call install again. Error: 7-Zip signalled an unknown error (code )
+关于解压失败的错误，这个似乎是无法解压的问题，根据错误提示执行如下命令，使Chocolatey使用系统的压缩功能。
+根据提示在powershell(管理员模式）下运行如下命令：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token variable">$env</span>:chocolateyUseWindowsCompression <span class="token operator">=</span> <span class="token string">'true'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后在运行安装命令: 同上安装命令</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>iwr https://chocolatey.org/install.ps1 -UseBasicParsing <span class="token operator">|</span> iex
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>或者</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>Set-ExecutionPolicy Bypass -Scope Process -Force<span class="token punctuation">;</span> iex <span class="token variable"><span class="token punctuation">((</span>New<span class="token operator">-</span>Object System.Net.WebClient<span class="token punctuation">)</span>.DownloadString<span class="token punctuation">(</span>'https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>chocolatey.org<span class="token operator">/</span>install.ps1'<span class="token punctuation">))</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>2、安装 LxRunOffline</strong></p> <p>LxRunOffline 是非常实用的 WSL 管理软件，可以备份、创建、恢复、导出WSL子系统，也可以安装适配 WSL 的任何 Linux 发行版，可以将 WSL 子系统安装到任意目录中。</p> <p>在 PowerShell 窗口中输入命令安装LxRunOffline，安装完成后重启 PowerShell。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>choco <span class="token function">install</span> lxrunoffline -y
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>3、下载 CentOS 镜像</strong></p> <p>GitHub 上有开源的适用于 WSL 的 CentOS 系统安装镜像，打开项目页面，选择 CentOS8 分支，进入 docker 目录，下载文件 centos-8-x86_64.tar.xz ，假如下载后保存在 D 盘下。</p> <p>GitHub下载：<a href="https://github.com/CentOS/sig-cloud-instance-images/tree/CentOS-8-x86_64/" target="_blank" rel="noopener noreferrer">下载<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>4、安装 CentOS 镜像</strong></p> <p>安装WSL子系统的命令行格式为：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>LxRunOffline install -n 自定义系统名称 -d 安装目录路径 -f 安装包路径.tar.xz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>重新启动 PowerShell，输入命令安装 CentOS 镜像：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>LxRunOffline <span class="token function">install</span> -n centos -d C:/centos -f D:<span class="token punctuation">\</span>centos-8-x86_64.tar.xz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>表示将 CentOS 系统安装到 C 盘的 centos 文件夹下，并且命名为 centos。**注意：**Windows 系统命令行中的文件路径和 Linux 系统不同，这里安装目录 C:/ 要用 Linux 方式的反斜线表示，是为了 WSL 使用；而安装包路径 D:\ 是为了 LxRunOffline 使用，是 Windows 下的路径。</p> <p><img src="https://pic2.zhimg.com/80/v2-246be13fe127a55b0652797d070d3ed1_720w.png" alt="img"></p> <p>查看所有已安装镜像，能够显示已安装的 centos ，表示安装成功。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>LxRunOffline.exe list
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>如果安装失败也会出现 centos 目录，安装失败重新安装时需要卸载镜像，另外安装目录在 C 盘在卸载时可能存在权限问题，卸载后如果目录没有删除可以手动删除目录。</p> <p>卸载 WSL 系统镜像命令：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>LxRunOffline.exe uninstall -n centos
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>5、升级为 WSL2</strong></p> <p>输入命令并回车，列出已经安装的 WSL 的信息</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>wsl -l -v
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>将对应的 WSL 发行版设为 WSL2，命令格式：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>wsl --set-version <span class="token operator">&lt;</span>Distro<span class="token operator">&gt;</span> <span class="token number">2</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>其中<Distro>要和上面查询到的信息一致，本例中为 centos，输入以下命令并回车：</Distro></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>wsl --set-version centos <span class="token number">2</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>输入以下命令并回车，设置默认使用的发行版：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>wsl -s centos
+or
+wslconfig /s centos
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>此时，再次使用命令 wsl -l -v 查看，可以看到 centos 的 VERSION 已经变为 2，并且名称前加了*号（即默认的WSL系统）。</p> <p><img src="https://pic4.zhimg.com/80/v2-58097abaa0dc965fb8fc26b9f27d7253_720w.png" alt="img"></p> <p><strong>6、WSL 子系统的启动与关闭</strong></p> <p>此时，输入命令 wsl -d centos 即可启动。</p> <p>停止WSL子系统命令：wsl --shutdown -n 系统名称，如果直接输入 wsl --shutdown ，会停止所有已启动的 WSL 子系统。</p> <p>在管理员权限的 PoweShell 中输入命令： net stop LxssManager ，也可以停止 WSL 子系统。</p> <p><strong>7、使用 Windows Terminal</strong></p> <p>当然，为了更好的配合 WSL ，一定要安装 Windows Terminal。</p> <p>有了 Terminal ，可以直接打开所有已安装的 WSL 发行版：</p> <p><img src="https://pic3.zhimg.com/80/v2-ef4f2fdc1e959ea1fa2200f0be3f2bfa_720w.png" alt="img"></p> <p><strong>8、目录设置</strong></p> <p>在 WSL2 系统中可以直接访问 windows 磁盘文件，因此为了不增加 WSL系统 VHD 虚拟磁盘空间，我个人打算将一些安装软件包放在 F:\wsl 目录下，将网站web程序放在 E:\wwwroot 目录中。而在 wsl 系统中的访问路径分别是 /mnt/f/wsl 和 /mnt/e/wwwroot ，当然 WSL 这样直接访问 windows 磁盘会有很大的性能问题。后续使用中如果性能的降低超过了可忍受的程度，再考虑将这两个目录移动到 wsl 的虚拟磁盘。</p> <p>打开 Windows 安全中心，病毒和威胁防护设置，管理设置，添加或删除排除项，添加排除项，将上述两个目录排除，这样会减少 windows 的系统性能占用。</p> <p><img src="https://pic4.zhimg.com/80/v2-2f9043628fc1e39672e3ada4da56223b_720w.png" alt="img"></p> <hr> <h2 id="二、centos8-基本配置"><a href="#二、centos8-基本配置" class="header-anchor">#</a> 二、centos8 基本配置</h2> <p><strong>1、查看 centos 版本</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>uname -a
+cat /proc/version
+cat /etc/redhat-release
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><img src="https://pic1.zhimg.com/80/v2-3d72747c34ae309226e217ffc32dd014_720w.png" alt="img"></p> <p><strong>2、安装 wget vim 等工具</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> ~ <span class="token comment">#转到用户目录</span>
+dnf -y <span class="token function">install</span> <span class="token function">vim</span> <span class="token function">wget</span>
+dnf -y <span class="token function">install</span> net-tools <span class="token comment">#启用 ifconfig,netstat 等网络 命令</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>3、更换国内源</strong></p> <p>(1) 备份原始的yum源</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /etc/yum.repos.d
+<span class="token function">mv</span> CentOS-Base.repo CentOS-Base.repo.bak
+<span class="token function">mv</span> CentOS-extras.repo CentOS-extras.repo.bak
+<span class="token function">mv</span> CentOS-centosplus.repo CentOS-centosplus.repo.bak
+<span class="token function">mv</span> CentOS-PowerTools.repo CentOS-PowerTools.repo.bak
+<span class="token function">mv</span> CentOS-AppStream.repo CentOS-AppStream.repo.bak
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>(2) 下载对应版本的repo文件</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">wget</span> -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+<span class="token function">vim</span> CentOS-Base.repo
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>可以看到 aliyun 的源包含的以下各项：[base] [extras] [centosplus] [PowerTools] [AppStream] ，因此前面对这些源都做了备份。</p> <p>(3) 清除旧的缓存并生成新的缓存</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf clean all
+dnf makecache
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><hr> <h2 id="三、源码编译安装-nginx"><a href="#三、源码编译安装-nginx" class="header-anchor">#</a> 三、源码编译安装 Nginx</h2> <p><strong>1、安装编译工具及库文件：</strong></p> <p>如果缺少某个库文件，在编译时会给出错误提示，可按提示安装缺失的库文件，然后重新进行编译。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf -y <span class="token function">install</span> <span class="token function">make</span> gcc pcre pcre-devel zlib zlib-devel openssl openssl-devel
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>gcc 是是GNU开发的C，C++和Java等多种语言的编译器。</p> <p>pcre pcre-devel 是一个 perl 库，包括 perl 兼容的正则表达式库，Nginx 的 Rewrite 模块和HTTP 核心模块会使用到 PCRE 来解析正则表达式语法。</p> <p>zlib zlib-devel 库提供了很多种压缩和解压缩方式，Nginx 启用压缩功能后，将使用 zlib 对 http 包的内容进行 gzip 压缩。</p> <p>openssl openssl-devel 是实现了SSL协议的开源项目，可以实现秘钥证书管理、对称加密和非对称加密 。用 SSL 加密的安全数据传输通道，保证客户端和服务器之间数据的安全。简单的说就是浏览器以 https 开头的网址访问网站，浏览器和服务器之间数据加密传输。当 Nginx 开启SSL功能后需要此模块的支持。</p> <p><strong>2、下载并解压：</strong></p> <p>打开 nginx 官网 ，可以看到当前最新版本是 nginx-1.19.1 ，下载 nginx-1.19.1.tar.gz 文件并解压。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /mnt/f/wsl <span class="token comment">#此目录是我个人存放各种安装包的目录，也就是 win10 的 F 盘 wsl 目录。 </span>
+<span class="token function">wget</span> http://nginx.org/download/nginx-1.19.1.tar.gz
+<span class="token function">tar</span> -zxvf nginx-1.19.1.tar.gz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>3、开始编译</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span>  nginx-1.19.1
+./configure
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>检查系统环境是否符合编译安装的要求，比如是否有gcc编译工具，是否支持编译参数当中的模块，并根据开启的参数等生成Makefile文件为下一步做准备。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>生成脚本及配置文件，根据Makefile文件生成相应的模块，安装，创建目录，并将生成的模块和文件复制到相应的目录。</p> <p><strong>4、等待安装完成</strong></p> <p>如果没有错误提示，默认安装目录是：/usr/local/nginx，现在可以查看版本，能正确显示版本，说明安装完成。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/usr/local/nginx/sbin/nginx -V 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>5、添加软链接</strong></p> <p>由于 WSL 不能使用 systemd ，使用 service 时会出现错误提示，这里不注册为 service ，而是使用软链接的方式省略执行 nginx 命令的路径前缀。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">ln</span> -s /usr/local/nginx/sbin/nginx /usr/bin/nginx
+nginx <span class="token comment">#启动服务</span>
+nginx -s reload  <span class="token comment">#不停止服务重新载入配置文件</span>
+nginx -s stop <span class="token comment">#停止服务</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><strong>6、配置</strong></p> <p>创建 Nginx 运行用户及用户组 www ，先停止服务再编辑 nginx.conf 文件</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">groupadd</span> www 
+<span class="token function">useradd</span> -g www www
+
+<span class="token function">mkdir</span> -p /data/wwwlogs
+<span class="token function">chown</span> -R www:www /data/wwwlogs
+
+nginx -s stop <span class="token comment">#停止服务</span>
+<span class="token function">vim</span> /usr/local/nginx/conf/nginx.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>参考了集成环境 OneinStack 中的配置。默认 user 为 nobody ，修改为 www 。将网站放在 /mnt/e/wwwroot 路径中，即 Win10 本地 E 盘 wwwroot 目录。</p> <p>fastcgi_pass unix:/dev/shm/php-cgi.sock; 表示 Nginx 和 PHP-FPM 的进程间采用UNIX Domain Socket 方式通信，因此在 PHP-FPM 的配置文件中也要做相应的配置。</p> <p>最后自动加载 vhost 目录中的配置文件，完整内容如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>user www www;
+worker_processes auto;
+
+error_log /data/wwwlogs/error_nginx.log crit;
+pid /var/run/nginx.pid;
+worker_rlimit_nofile 51200;
+
+events {
+  use epoll;
+  worker_connections 51200;
+  multi_accept on;
+}
+
+http {
+  include mime.types;
+  default_type application/octet-stream;
+  server_names_hash_bucket_size 128;
+  client_header_buffer_size 32k;
+  large_client_header_buffers 4 32k;
+  client_max_body_size 1024m;
+  client_body_buffer_size 10m;
+  sendfile on;
+  tcp_nopush on;
+  keepalive_timeout 120;
+  server_tokens off;
+  tcp_nodelay on;
+
+  fastcgi_connect_timeout 300;
+  fastcgi_send_timeout 300;
+  fastcgi_read_timeout 300;
+  fastcgi_buffer_size 64k;
+  fastcgi_buffers 4 64k;
+  fastcgi_busy_buffers_size 128k;
+  fastcgi_temp_file_write_size 128k;
+  fastcgi_intercept_errors on;
+
+  #Gzip Compression
+  gzip on;
+  gzip_buffers 16 8k;
+  gzip_comp_level 6;
+  gzip_http_version 1.1;
+  gzip_min_length 256;
+  gzip_proxied any;
+  gzip_vary on;
+  gzip_types
+    text/xml application/xml application/atom+xml application/rss+xml application/xhtml+xml image/svg+xml
+    text/javascript application/javascript application/x-javascript
+    text/x-json application/json application/x-web-app-manifest+json
+    text/css text/plain text/x-component
+    font/opentype application/x-font-ttf application/vnd.ms-fontobject
+    image/x-icon;
+  gzip_disable &quot;MSIE [1-6]\.(?!.*SV1)&quot;;
+
+######################## default ############################
+  server {
+    listen 80;
+    server_name _;
+    access_log /data/wwwlogs/access_nginx.log combined;
+    root /mnt/e/wwwroot/default;
+    index index.html index.htm index.php;
+    #error_page 404 /404.html;
+    #error_page 502 /502.html;
+    #location /nginx_status {
+     # stub_status on;
+     # access_log off;
+     # allow 127.0.0.1;
+     # deny all;
+    #}
+    location ~ [^/]\.php(/|$) {
+      #fastcgi_pass 127.0.0.1:9000;
+      fastcgi_pass unix:/dev/shm/php-cgi.sock;
+      fastcgi_index index.php;
+      include fastcgi.conf;
+    }
+    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|mp4|ico)$ {
+      expires 30d;
+      access_log off;
+    }
+    location ~ .*\.(js|css)?$ {
+      expires 7d;
+      access_log off;
+    }
+    location ~ ^/(\.user.ini|\.ht|\.git|\.svn|\.project|LICENSE|README.md) {
+      deny all;
+    }
+  }
+########################## vhost #############################
+  include vhost/*.conf;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br></div></div><p>错误提示：</p> <blockquote><p>unknown directive &quot;stub_status&quot; in /usr/local/nginx/conf/nginx.conf:64</p></blockquote> <p>stub_status模块主要用于查看Nginx的一些状态信息，默认不会编译进Nginx，在配置文件中就不能有stub_status 相关配置信息。</p> <p><strong>7、测试</strong></p> <p>启动命令：nginx ，没有出现任何提示。</p> <p>查看端口服务是否开启</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">netstat</span> -lnt<span class="token operator">|</span><span class="token function">grep</span> <span class="token number">80</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>打开浏览器</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>输入 http://localhost 或者 http://127.0.0.1，然后回车
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>如果出现 Welcome to nginx! 页面，说明 WSL 及 Nginx 服务器运行正常。</p> <h2 id="四、源码安装-mysql8-0"><a href="#四、源码安装-mysql8-0" class="header-anchor">#</a> 四、源码安装 MySql8.0</h2> <p><strong>1、下载 MySql8.0</strong></p> <p>打开mysql官网，社区版下载页，当前最新版本是 8.0.21，操作系统选择 Linux-Generic ，这里根据自己的系统选择下载文件：mysql-8.0.21-linux-glibc2.12-x86_64.tar.xz，即 x86 架构 64位版本。</p> <p><a href="http://dev.mysql.com/downloads/mysql" target="_blank" rel="noopener noreferrer">http://dev.mysql.com/downloads<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><img src="https://pic2.zhimg.com/80/v2-3953f292c55ed1f2f7411df78d9e98f5_720w.png" alt="img"></p> <p>点击 Download 后，转到文件链接页，在 No thanks,just start my download. 上右键，选择复制链接，在 Centos 中下载链接文件：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /mnt/f/wsl <span class="token comment">#此目录是我个人存放各种安装包的目录，也就是 win10 的 F 盘 wsl 目录。 </span>
+<span class="token function">wget</span> https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86_64.tar.xz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="https://pic3.zhimg.com/80/v2-c79446d3dc3ecca6cf7e92a5ca9dba7a_720w.png" alt="img"></p> <p><strong>2、解压并配置相关目录与权限</strong></p> <p>解压之后，将解压出的目录移动到 /usr/local/ 下并改名为 mysql，切换到 /usr/local/mysql 目录，创建 data 目录，再在根目录下创建 /data/mysql 目录。目录路径可以按自己的需要创建。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">tar</span> -xvf mysql-8.0.21-linux-glibc2.12-x86_64.tar.xz
+
+<span class="token function">mv</span> mysql-8.0.21-linux-glibc2.12-x86_64 /usr/local/mysql
+
+<span class="token builtin class-name">cd</span> /usr/local/mysql
+<span class="token function">mkdir</span> data
+<span class="token function">mkdir</span> -p /data/mysql
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>创建用户组 mysql ，给用户组添加用户 mysql，并给相应的目录权限。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">groupadd</span> mysql
+<span class="token function">useradd</span> -g mysql mysql
+
+<span class="token function">chown</span> -R mysql:mysql /usr/local/mysql/
+<span class="token function">chown</span> -R mysql:mysql /data/mysql
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>3、初始化 MySql</strong></p> <p>添加需要的库文件</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf <span class="token function">install</span> libaio numactl initscripts -y
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>初始化，参数要和前面创建的用户及目录对应。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>bin/mysqld --initialize --user<span class="token operator">=</span>mysql --basedir<span class="token operator">=</span>/usr/local/mysql --datadir<span class="token operator">=</span>/usr/local/mysql/data
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>执行结束会生成数据库root用户密码，做好记录。( A temporary password is generated for root@localhost: Zlg+oqdhy9i=)</p> <p>如果执行失败,需要删除 data 和 tmp 目录下所有内容，根据错误提示，检查配置后重新执行初始化。</p> <p><strong>4、创建并配置 my.cnf 文件</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">touch</span> /etc/my.cnf
+<span class="token function">vim</span> /etc/my.cnf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>my.cnf 参考了集成环境 OneinStack 中的配置，内容如下。同样，my.cnf 配置文件中的目录路径也要和前面mysql初始化时的一致。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[client]
+port = 3306
+socket = /tmp/mysql.sock
+default-character-set = utf8mb4
+
+[mysql]
+prompt=&quot;MySQL [\d]&gt; &quot;
+no-auto-rehash
+
+[mysqld]
+port = 3306
+socket = /tmp/mysql.sock
+default_authentication_plugin = mysql_native_password
+
+basedir = /usr/local/mysql
+datadir = /usr/local/mysql/data
+pid-file = /data/mysql/mysql.pid
+user = mysql
+bind-address = 0.0.0.0
+server-id = 1
+
+init-connect = 'SET NAMES utf8mb4'
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+skip-name-resolve
+#skip-networking
+back_log = 300
+
+max_connections = 1259
+max_connect_errors = 6000
+open_files_limit = 65535
+table_open_cache = 1024
+max_allowed_packet = 500M
+binlog_cache_size = 1M
+max_heap_table_size = 8M
+tmp_table_size = 128M
+
+read_buffer_size = 2M
+read_rnd_buffer_size = 8M
+sort_buffer_size = 8M
+join_buffer_size = 8M
+key_buffer_size = 256M
+
+thread_cache_size = 64
+
+ft_min_word_len = 4
+
+log_bin = mysql-bin
+binlog_format = mixed
+binlog_expire_logs_seconds = 604800
+
+log_error = /data/mysql/mysql-error.log
+slow_query_log = 1
+long_query_time = 1
+slow_query_log_file = /data/mysql/mysql-slow.log
+
+performance_schema = 0
+explicit_defaults_for_timestamp
+
+#lower_case_table_names = 1
+
+skip-external-locking
+
+default_storage_engine = InnoDB
+#default-storage-engine = MyISAM
+innodb_file_per_table = 1
+innodb_open_files = 500
+innodb_buffer_pool_size = 1024M
+innodb_write_io_threads = 4
+innodb_read_io_threads = 4
+innodb_thread_concurrency = 0
+innodb_purge_threads = 1
+innodb_flush_log_at_trx_commit = 2
+innodb_log_buffer_size = 2M
+innodb_log_file_size = 32M
+innodb_log_files_in_group = 3
+innodb_max_dirty_pages_pct = 90
+innodb_lock_wait_timeout = 120
+
+bulk_insert_buffer_size = 8M
+myisam_sort_buffer_size = 64M
+myisam_max_sort_file_size = 10G
+myisam_repair_threads = 1
+
+interactive_timeout = 28800
+wait_timeout = 28800
+
+[mysqldump]
+quick
+max_allowed_packet = 500M
+
+[myisamchk]
+key_buffer_size = 256M
+sort_buffer_size = 8M
+read_buffer = 4M
+write_buffer = 4M
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br></div></div><p><strong>5、启动 MySql</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/usr/local/mysql/support-files/mysql.server start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>只创建软链接，不配置环境变量。因为使用 mysql 命令登录数据库，或使用 mysqldump 命令备份数据库，都不常用，要用的时候直接使用绝对路径。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">ln</span> -s /usr/local/mysql/support-files/mysql.server /usr/bin/mysqld
+mysqld start <span class="token comment">#启动mysql</span>
+mysqld stop <span class="token comment">#停止mysql</span>
+<span class="token function">netstat</span> -lnt <span class="token comment">#查看已开放的端口</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>查看所有可用的命令参数</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>mysqld --help
+Usage: mysqld  <span class="token punctuation">{</span>start<span class="token operator">|</span>stop<span class="token operator">|</span>restart<span class="token operator">|</span>reload<span class="token operator">|</span>force-reload<span class="token operator">|</span>status<span class="token punctuation">}</span>  <span class="token punctuation">[</span> MySQL server options <span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>6、修改密码</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/usr/local/mysql/bin/mysql -uroot -p
+<span class="token comment">#输入初始化时记录的密码</span>
+
+<span class="token comment">#登录后在命令提示符 MySQL [(none)]&gt; 后，输入如下语句并回车</span>
+<span class="token comment">#(MySql语句要以;结束，password 修改成自己的新密码)</span>
+
+alter user <span class="token string">'root'</span>@<span class="token string">'localhost'</span> identified by <span class="token string">'password'</span><span class="token punctuation">;</span>
+<span class="token builtin class-name">exit</span> <span class="token comment">#退出</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>7、安装过程中的报错及处理方法</strong></p> <blockquote><p>/etc/redhat-lsb/lsb_log_message: line 3: /etc/init.d/functions: No such file or directory</p></blockquote> <p>解决方法是安装initscripts： dnf -y install initscripts</p> <blockquote><p>mysqld_safe error: log-error set to '/data/mysql/mysql-error.log', however file don't exists. Create writable for user 'mysql'.</p></blockquote> <p>解决方法是：创建此文件并给予 mysql 组和用户权限</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;&quot;</span> <span class="token operator">&gt;</span> /data/mysql/mysql-error.log
+<span class="token function">chown</span> -R mysql:mysql /data/mysql/mysql-error.log
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>如下报错也可以尝试用此方法解决</p> <blockquote><p>The server quit without updating PID file (/data/mysql/mysql.pid)</p></blockquote> <h2 id="五、源码编译安装-php7-4"><a href="#五、源码编译安装-php7-4" class="header-anchor">#</a> 五、源码编译安装 php7.4</h2> <p><strong>1、下载</strong></p> <p>打开PHP官网，看到当前最新版本是 7.4.9，由于官网国内下载很慢，找到一个国内的库，下载源码文件。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /mnt/f/wsl <span class="token comment">#此目录是我个人存放各种安装包的目录，也就是 win10 的 F 盘 wsl 目录。 </span>
+<span class="token function">wget</span> http://mirrors.sohu.com/php/php-7.4.9.tar.xz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>2、安装编译工具和库</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf -y <span class="token function">install</span> <span class="token function">make</span> gcc pcre pcre-devel zlib zlib-devel openssl openssl-devel 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在安装 Nginx 时就已经安装过编译工具和库，在检查配置编译参数时，提示缺少哪个就安装哪个库。</p> <p><strong>3、创建用户组和用户</strong></p> <p>如果在安装 Nginx 时已经创建过，就不用再重复创建了。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">groupadd</span> www
+<span class="token function">useradd</span> -g www www
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>4、配置编译</strong></p> <p>解压缩，移动到 /usr/local/ 目录并重命名为 php，切换到 /usr/local/php 目录。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">tar</span> -xvf php-7.4.9.tar.xz
+<span class="token function">mv</span> php-7.4.9 /usr/local/php
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>查看已安装的 php 编译参数命令是：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>php -i<span class="token operator">|</span><span class="token function">grep</span> configure
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>以下编译参数来源于 oneinstack 集成包，复制以下所有内容到 CentOS 命令行窗口，回车，开始检查配置。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>./configure --prefix=/usr/local/php \
+--with-config-file-path=/usr/local/php/etc \
+--with-config-file-scan-dir=/usr/local/php/etc/php.d \
+--with-fpm-user=www \
+--with-fpm-group=www \
+--enable-fpm \
+--enable-opcache \
+--disable-fileinfo \
+--enable-mysqlnd \
+--with-mysqli=mysqlnd \
+--with-pdo-mysql=mysqlnd \
+--with-iconv-dir=/usr/local/libiconv \
+--with-freetype \
+--with-jpeg \
+--with-zlib \
+--enable-xml \
+--disable-rpath \
+--enable-bcmath \
+--enable-shmop \
+--enable-exif \
+--enable-sysvsem \
+--enable-inline-optimization \
+--with-curl=/usr/local/curl \
+--enable-mbregex \
+--enable-mbstring \
+--with-password-argon2 \
+--with-sodium=/usr/local \
+--enable-gd \
+--with-openssl=/usr/local/openssl \
+--with-mhash \
+--enable-pcntl \
+--enable-sockets \
+--with-xmlrpc \
+--enable-ftp \
+--enable-intl \
+--with-xsl \
+--with-gettext \
+--with-zip=/usr/local \
+--enable-soap \
+--disable-debug \
+PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/:
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><p>一遍遍执行上述检查配置，根据报错 error 或类似 not found 类，解决错误。直到出现如下所示：Thank you for using PHP</p> <p><img src="https://pic3.zhimg.com/80/v2-3a32bea087e389343ab3fecce33a2de6_720w.png" alt="img"></p> <p><strong>5、安装完成</strong></p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="https://pic1.zhimg.com/80/v2-c4571d973eb887850368a26b618a0d08_720w.png" alt="img"></p> <p><strong>6、报错及解决</strong></p> <blockquote><p>configure: error: C++ preprocessor &quot;/lib/cpp&quot; fails sanity check</p></blockquote> <p>解决方法：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf -y <span class="token function">install</span> glibc-headers gcc-c++
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>Package 'libxml-2.0', required by 'virtual:world', not found
+Package 'sqlite3', required by 'virtual:world', not found
+Package 'libcurl', required by 'virtual:world', not found
+Package 'libpng', required by 'virtual:world', not found
+Package 'libjpeg', required by 'virtual:world', not found
+Package 'freetype', required by 'virtual:world', not found
+Package 'icu-uc', required by 'virtual:world', not found
+Package 'libsodium', required by 'virtual:world', not found</p></blockquote> <p>解决方法：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf -y <span class="token function">install</span> libxml2-devel sqlite-devel libcurl-devel libpng-devel libjpeg-devel freetype-devel libicu-devel
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>Package 'oniguruma', required by 'virtual:world', not found</p></blockquote> <p>oniguruma是一个处理正则表达式的库</p> <p>解决方法：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">wget</span> https://github.com/kkos/oniguruma/archive/v6.9.4.tar.gz -O oniguruma-6.9.4.tar.gz 
+<span class="token function">tar</span> -zxvf oniguruma-6.9.4.tar.gz
+<span class="token builtin class-name">cd</span> oniguruma-6.9.4/
+./autogen.sh <span class="token operator">&amp;&amp;</span> ./configure --prefix<span class="token operator">=</span>/usr
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><blockquote><p>Generating autotools files.
+./autogen.sh: line 6: autoreconf: command not found</p></blockquote> <p>解决方法：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf -y <span class="token function">install</span> autoconf automake libtool
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>再次检查配置，没有问题了，再生成脚本及配置文件，安装。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>./autogen.sh <span class="token operator">&amp;&amp;</span> ./configure --prefix<span class="token operator">=</span>/usr
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><blockquote><p>configure: error: Package requirements (libsodium &gt;= 1.0.8) were not met:
+Package 'libsodium', required by 'virtual:world', not found</p></blockquote> <p>解决方法：</p> <p>Sodium 是一个全新而且易用的加密库，用于加密、解密、签名和生成密码哈希等等。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">wget</span> https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable.tar.gz
+<span class="token function">tar</span> -zxf libsodium-1.0.18-stable.tar.gz
+<span class="token builtin class-name">cd</span> libsodium-stable
+./configure --prefix<span class="token operator">=</span>/usr
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+ldconfig
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><blockquote><p>checking for Argon2 library... not found
+configure: error: Please ensure the argon2 header and library are installed</p></blockquote> <p>解决方法：</p> <p>打开 <a href="http://pkgs.org/" target="_blank" rel="noopener noreferrer">http://pkgs.org<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> ，查找 libargon2 ，找到 centos8 的rpm包，下载安装。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">wget</span> https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/l/libargon2-20171227-3.el8.x86_64.rpm
+<span class="token function">wget</span> https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/l/libargon2-devel-20171227-3.el8.x86_64.rpm
+<span class="token function">rpm</span> -Uvh libargon2-20171227-3.el8.x86_64.rpm
+<span class="token function">rpm</span> -Uvh libargon2-devel-20171227-3.el8.x86_64.rpm
+dnf -y <span class="token function">install</span> libargon2 libargon2-devel
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>configure: error: Package requirements (libxslt &gt;= 1.1.0) were not met:
+Package 'libxslt', required by 'virtual:world', not found</p></blockquote> <p>解决方法：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>dnf -y <span class="token function">install</span> libxslt libxslt-devel
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>Failed to set locale, defaulting to C.UTF-8
+error: rpmdb: BDB2034 unable to allocate memory for mutex; resize mutex region
+error: cannot open Packages index using db5 - Cannot allocate memory (12)
+error: cannot open Packages database in /var/lib/rpm
+Error: Error: rpmdb open failed</p></blockquote> <p>解决方法：</p> <p>一般是由于rpm本地数据库损坏导致的。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /var/lib/rpm      <span class="token comment"># rpm db所在目录</span>
+<span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'db.'</span>   <span class="token comment"># 列出相关rpm db文件</span>
+<span class="token function">rm</span> -f __db.*     <span class="token comment"># 清除原rpmdb文件</span>
+<span class="token function">rpm</span> --rebuilddb     <span class="token comment"># 重建rpm数据库</span>
+yum clean all
+dnf makecache
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><blockquote><p>Package 'libzip', required by 'virtual:world', not found</p></blockquote> <p>解决方法：</p> <p>打开 <a href="http://pkgs.org/" target="_blank" rel="noopener noreferrer">http://pkgs.org<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> ，查找 libzip 及 libzip-devel，找到 centos8 的rpm包，下载安装。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">wget</span> http://mirror.centos.org/centos/8/AppStream/x86_64/os/Packages/libzip-1.5.2-1.module_el8.2.0+314+53b99e08.x86_64.rpm
+<span class="token function">wget</span> http://mirror.centos.org/centos/8/AppStream/x86_64/os/Packages/libzip-devel-1.5.2-1.module_el8.2.0+314+53b99e08.x86_64.rpm
+<span class="token function">rpm</span> -Uvh libzip-1.5.2-1.module_el8.2.0+314+53b99e08.x86_64.rpm
+<span class="token function">rpm</span> -Uvh libzip-devel-1.5.2-1.module_el8.2.0+314+53b99e08.x86_64.rpm
+dnf -y <span class="token function">install</span> libzip libzip-devel
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>7、配置</strong></p> <p>生成 php 配置文件</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">cp</span> php.ini-production /usr/local/php/etc/php.ini
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在编译时启用了参数：--enable-opcache ，查找 opcache.so模块文件所在路径。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">find</span> /usr -name opcache.so
+
+<span class="token comment">###输出###</span>
+/usr/local/php/ext/opcache/.libs/opcache.so
+/usr/local/php/lib/php/extensions/debug-non-zts-20190902/opcache.so
+/usr/local/php/modules/opcache.so
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>编辑 php.ini 文件，在末尾添加如下内容，开启 OPcache 扩展</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token punctuation">[</span>opcache<span class="token punctuation">]</span>
+<span class="token assign-left variable">zend_extension</span><span class="token operator">=</span>/usr/local/php/modules/opcache.so
+opcache.enable<span class="token operator">=</span><span class="token number">1</span>
+opcache.enable_cli<span class="token operator">=</span><span class="token number">1</span>
+opcache.memory_consumption<span class="token operator">=</span><span class="token number">128</span>
+opcache.interned_strings_buffer<span class="token operator">=</span><span class="token number">8</span>
+opcache.max_accelerated_files<span class="token operator">=</span><span class="token number">10000</span>
+opcache.revalidate_freq<span class="token operator">=</span><span class="token number">60</span>
+opcache.file_cache<span class="token operator">=</span>/tmp/opcache
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>生成 php-fpm 配置文件并编辑。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token builtin class-name">cd</span> /usr/local/php/etc
+<span class="token function">cp</span> php-fpm.conf.default php-fpm.conf
+<span class="token function">vim</span> php-fpm.conf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>这里还是参考 OneInStack 集成环境包中的配置，清空 php-fpm.conf 内容，修改如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>;;;;;;;;;;;;;;;;;;;;;
+; FPM Configuration ;
+;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;
+; Global Options ;
+;;;;;;;;;;;;;;;;;;
+
+[global]
+pid = run/php-fpm.pid
+error_log = log/php-fpm.log
+log_level = warning
+
+emergency_restart_threshold = 30
+emergency_restart_interval = 60s
+process_control_timeout = 5s
+daemonize = yes
+
+;;;;;;;;;;;;;;;;;;;;
+; Pool Definitions ;
+;;;;;;;;;;;;;;;;;;;;
+
+[www]
+listen = /dev/shm/php-cgi.sock
+listen.backlog = -1
+listen.allowed_clients = 127.0.0.1
+listen.owner = www
+listen.group = www
+listen.mode = 0666
+user = www
+group = www
+
+pm = dynamic
+pm.max_children = 50
+pm.start_servers = 30
+pm.min_spare_servers = 20
+pm.max_spare_servers = 50
+pm.max_requests = 2048
+pm.process_idle_timeout = 10s
+request_terminate_timeout = 120
+request_slowlog_timeout = 0
+
+pm.status_path = /php-fpm_status
+slowlog = var/log/slow.log
+rlimit_files = 51200
+rlimit_core = 0
+
+catch_workers_output = yes
+;env[HOSTNAME] = aliyun-wxy
+env[PATH] = /usr/local/bin:/usr/bin:/bin
+env[TMP] = /tmp
+env[TMPDIR] = /tmp
+env[TEMP] = /tmp
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div><p>本配置文件指定了 PHP-FPM 进程通信方式：listen = /dev/shm/php-cgi.sock，和 Nginx 的配置保持了一致。</p> <p>生成 php-fpm 服务启动文件：（新的文件名不能有 - 字符）</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">cp</span> /usr/local/php/sapi/fpm/init.d.php-fpm /usr/bin/phpfpm
+<span class="token function">chmod</span> <span class="token number">740</span> /usr/bin/phpfpm
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>测试启动php-fpm</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>phpfpm start
+phpfpm restart
+phpfpm stop
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>查看 php 已启用的模块：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>php -m
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>查看 php 版本</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/usr/local/php/bin/php -v
+php -v
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><strong>8、安装配置 Xdebug</strong></p> <p>OPcache 扩展是 PHP7.X 自带的，只要在编译时开启，就可以配置使用。而 Xdebug 需要另外安装。参考 xdebug 官网文档。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>yum <span class="token function">install</span> -y <span class="token function">git</span>
+<span class="token function">git</span> clone git://github.com/xdebug/xdebug.git
+<span class="token builtin class-name">cd</span> xdebug
+phpize
+./configure --enable-xdebug
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><img src="https://pic1.zhimg.com/80/v2-66d253067bd83ca208f5334eac463e48_720w.png" alt="img"></p> <p>Xdebug编译完成后显示扩展文件目录、提示将扩展添加到 php.ini文件</p> <p>编辑 php.ini ，在末尾增加 xdebug.so扩展。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">vim</span> /usr/local/php/etc/php.ini
+
+<span class="token comment">####增加xdebug.so扩展###</span>
+<span class="token assign-left variable">zend_extension</span><span class="token operator">=</span><span class="token string">&quot;/usr/local/php/lib/php/extensions/debug-non-zts-20190902/xdebug.so&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>重启 php-fpm ，检查 php 扩展</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>/usr/bin/php-fpm restart
+php -m
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="六、lnmp-环境测试"><a href="#六、lnmp-环境测试" class="header-anchor">#</a> 六、LNMP 环境测试</h2> <p><strong>1、Nginx 和 PHP-FPM 的配合</strong></p> <p>Nginx 和 PHP-FPM 的进程间通信有两种方式，一种是TCP，另一种是 UNIX Domain Socket。</p> <p>其中 TCP 方式是 IP 加端口，可以跨服务器。而 UNIX Domain Socket 不经过网络,只能用于Nginx 跟 PHP-FPM 都在同一服务器的场景。不管用哪种方式在 Nginx 和 PHP-FPM 配置时要统一。</p> <p>方式1: TCP</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>php-fpm.conf 文件配置: listen = 127.0.0.1:9000
+nginx.conf 文件配置: fastcgi_pass 127.0.0.1:9000;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>方式2: UNIX Domain Socket</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>php-fpm.conf 文件配置: listen = /tmp/php-fpm.sock
+nginx.conf 文件配置: fastcgi_pass unix:/tmp/php-fpm.sock;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>其中 php-fpm.sock 是一个文件，由 php-fpm 生成，如果在 php-fpm.conf 配置文件中指定的用户和组是 www ，确保 /tmp/php-fpm.sock 的权限是 www:www。</p> <p><strong>2、测试 phpinfo 文件</strong></p> <p>在浏览器中打开内容为 phpinfo() 函数的 PHP 文件，如果 nginx 出现错误，则说明 php 无法配合 Nginx 运行， 请查看 nginx 错误日志。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">vim</span> /data/wwwlogs/error_nginx.log
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="https://pic4.zhimg.com/80/v2-83101ea9770deaaf2cc31bf441b744a3_720w.png" alt="img"></p> <p>phpinfo 显示了编译参数、 php.ini 的文件位置、已开启OPcache 及 Xdebug 扩展等信息</p> <p><strong>3、phpMyAdmin</strong></p> <p>下载 phpMyAdmin 并解压到 /mnt/e/wwwroot/default 目录，即 Nginx 配置文件中指定的默认网站目录。在浏览器中打开 localhost/phpMyAdmin/ ，如果能顺利登录数据库，则说明不但 Nginx 和 php 没有问题，而且 Mysql 也没有问题。至此，Nginx php Mysql 已经完全能配合运行了。</p> <p><img src="https://pic4.zhimg.com/80/v2-40c0b426e239923a97561d0d417e582b_720w.png" alt="img"></p> <p><strong>4、关于开机自动启动服务</strong></p> <p>通常在 Linux 中开机启动可以通过编辑/etc/rc.loacl 文件、在/etc/init.d/ 下添加启动脚本或者配置systemd 实现，但是关于由于 WSL 架构的特殊性，并且不支持 systemd ，这几种方式在 WSL 子系统中无法使用。而在 Windows 中用 VBS 脚本结合 WSL 命令的实现开机启动的方式似乎存在不能使用 LocalHost 地址访问子系统的问题。总之，暂时还是手动启动吧。</p> <p>如前述，已安装的 Nginx、PHP、MySql 启动及停止命令总结如下：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>nginx <span class="token comment">#启动nginx服务</span>
+phpfpm start <span class="token comment">#启动php-fpm服务</span>
+mysqld start <span class="token comment">#启动mysql</span>
+
+
+nginx -s reload  <span class="token comment">#不停止服务重新载入配置文件</span>
+nginx -s stop <span class="token comment">#停止服务</span>
+
+phpfpm restart
+phpfpm stop
+
+mysqld restart <span class="token comment">#重启mysql</span>
+mysqld stop <span class="token comment">#停止mysql</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><img src="https://pic4.zhimg.com/80/v2-6b9172a8a0ff8d0ed733fd049b76cf7b_720w.png" alt="img"></p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">LastUpdated: </span> <span class="time">6/5/2021, 1:20:50 AM</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div></div><div></div><APlayer audio="" fixed="true" mini="true" autoplay="autoplay" theme="#f9bcdd" loop="loop" order="random" preload="auto" volume="0.1" mutex="true" lrc-type="0" list-folded="true" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 一叶知秋
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div><canvas id="vuepress-canvas-cursor"></canvas><canvas id="vuepress-canvas-ribbon"></canvas></div></div>
+    <script src="/assets/js/app.33ac6e59.js" defer></script><script src="/assets/js/3.162d37eb.js" defer></script><script src="/assets/js/1.0ce505e2.js" defer></script><script src="/assets/js/89.cf3bae40.js" defer></script>
+  </body>
+</html>
